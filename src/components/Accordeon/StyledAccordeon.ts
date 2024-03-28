@@ -6,6 +6,16 @@ export const StyledAccordeon = styled.ul`
   min-height: 560px;
   margin: 0 auto;
   background-color: transparent;
+  @media (max-width: 1023.5px) {
+    width: 620px;
+  }
+  @media (max-width: 767.5px) {
+    width: 434px;
+  }
+  @media (max-width: 479.5px) {
+    width: 100%;
+    // padding-right: 16px;
+  }
 `;
 export const StyledAccordeonPanel = styled.div<{
   $isOpen: boolean;
@@ -75,8 +85,8 @@ export const StyledAccordeonPanel = styled.div<{
     }
   }
   & button {
-    width: 60px;
-    height: 60px;
+    width: 40px;
+    height: 40px;
     display: flex;
     align-items: center;
   }
@@ -86,6 +96,26 @@ export const StyledAccordeonPanel = styled.div<{
     height: 40px;
     transition: all 0.3s ease-in-out;
     transform: rotate(${(props) => (props.$isOpen ? "-45deg" : "0deg")});
+  }
+  @media (max-width: 1023.5px) {
+    & button {
+      width: 24px;
+      height: 24px;
+    }
+    & img {
+      width: 24px;
+      height: 24px;
+    }
+  }
+  @media (max-width: 767.5px) {
+    & button {
+      width: 18px;
+      height: 18px;
+    }
+    & img {
+      width: 18px;
+      height: 18px;
+    }
   }
 `;
 export const StyledAccordeonContent = styled.li<{
@@ -115,6 +145,9 @@ export const StyledAccordeonContent = styled.li<{
   }
   @media (max-width: 767.5px) {
     line-height: 22px;
+  }
+  @media (max-width: 479.5px) {
+    margin-right: 16px;
   }
 `;
 

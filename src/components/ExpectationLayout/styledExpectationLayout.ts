@@ -12,8 +12,12 @@ export const StyledExpectation = styled.div`
   /* padding: 180px 251px 120px 251px; - паддинги из макета */
   border-radius: 0px 0px 80px 80px;
   background: ${backgroundColor.black};
+  @media (max-width: 1023.5px) {
+    border-radius: 0;
+    padding: 60px 12px 111px 12px;
+  }
   @media (max-width: 767.5px) {
-    padding-top: 60px;
+    padding: 50px 0px 70px 0px;
   }
   @media (max-width: 479.5px) {
   }
@@ -34,6 +38,8 @@ export const StyledExpectationText = styled.p`
     letter-spacing: 0.36px;
   }
   @media (max-width: 1023.5px) {
+    max-width: 300px;
+    margin: 20px 20px auto auto;
     font-size: 14px;
     font-weight: 300;
     line-height: 16px;
@@ -45,6 +51,9 @@ export const StyledExpectationText = styled.p`
     line-height: 16px;
   }
   @media (max-width: 479.5px) {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
   }
 `;
 
@@ -59,16 +68,19 @@ export const StyledH2 = styled.h2`
   -webkit-background-clip: text;
   color: transparent;
   @media (max-width: 1439.5px) {
+    margin-bottom: 60px;
     font-size: 36px;
     line-height: 45px; /* 125% */
     letter-spacing: 1.08px;
   }
   @media (max-width: 1023.5px) {
+    margin-bottom: 38px;
     font-size: 40px;
     line-height: 48px; /* 120% */
     letter-spacing: 1.2px;
   }
   @media (max-width: 767.5px) {
+    margin-bottom: 6px;
     font-size: 30px;
     line-height: 32px;
   }
