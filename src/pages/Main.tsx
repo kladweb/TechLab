@@ -28,7 +28,7 @@ export const Main = () => {
       <Reviews></Reviews>
       <SoonStartLayout />
       <TestBlock></TestBlock>
-      {/*<QuestionsLayout></QuestionsLayout>*/}
+      <QuestionsLayout></QuestionsLayout>
       <FeedbackSection></FeedbackSection>
     </>
   );
