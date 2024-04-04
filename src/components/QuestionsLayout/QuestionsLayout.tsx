@@ -1,4 +1,5 @@
 import React from "react";
+import { useWindowSize } from "../../hooks/useWindowSize";
 import {
   StyledContainer,
   StyledFrameHeader,
@@ -9,13 +10,9 @@ import { StyledQuestions, StyledQuestionsText } from "./styledQuestions";
 import { backgroundColor } from "../../styledConstantsColors";
 
 const QuestionsLayout = () => {
+  const { width = 0 } = useWindowSize();
   return (
     <>
-      <StyledSectionSeparator
-        $background={backgroundColor.champagne}
-        // $background={backgroundColor.black}
-      ></StyledSectionSeparator>
-
       <StyledQuestions>
         <StyledContainer>
           <div>
@@ -31,6 +28,11 @@ const QuestionsLayout = () => {
           <Accordeon isBlack={true} />
         </StyledContainer>
       </StyledQuestions>
+      {width > 1023 && (
+        <StyledSectionSeparator
+          $background={backgroundColor.black}
+        ></StyledSectionSeparator>
+      )}
     </>
   );
 };
