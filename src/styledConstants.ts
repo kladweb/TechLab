@@ -9,38 +9,39 @@ export const StyledFlex = styled.div`
 `;
 
 export const StyledFrameHeader = styled.h3` // Заголовок почти на каждом блоке 
-color: ${typographyColor.lightBG.black};
-font-family: Raleway;
-font-size: 56px;
-font-style: normal;
-font-weight: 700;
-line-height: 60px;
-letter-spacing: 1.62px; 
-margin-bottom: 16px;
+  margin-top: 10px;
+  margin-bottom: 12px;
+  color: ${typographyColor.lightBG.black};
+  font-family: Raleway;
+  font-size: 56px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 60px;
+  letter-spacing: 1.62px;
 
-& span{ // фиолетовое выделенное слово в заголовке
-  padding: 8px 20px;
-  border-radius: 100px;
-  background: ${typographyColor.lightBG.violet};
-  color: ${typographyColor.darkBG.white};
-}
+  & span { // фиолетовое выделенное слово в заголовке
+    padding: 7px 20px 9px;
+    border-radius: 100px;
+    background: ${typographyColor.lightBG.violet};
+    color: ${typographyColor.darkBG.white};
+  }
 
-@media(max-width:1439.5px){
-font-size: 36px;
-font-weight: 700;
-line-height: 45px;
-letter-spacing: 1.08px;
-}
-@media(max-width:767.5px){
-font-size: 30px;
-font-weight: 700;
-line-height: 32px;
-letter-spacing: 1.08px;
-margin-bottom: 11px;
-& span{ 
-  padding: 2px 7px;
-}
-}
+  @media (max-width: 1439.5px) {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 45px;
+    letter-spacing: 1.08px;
+  }
+  @media (max-width: 767.5px) {
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 32px;
+    letter-spacing: 1.08px;
+    margin-bottom: 11px;
+    & span {
+      padding: 2px 7px;
+    }
+  }
 `
 
 export const StyledFrameText = styled.p<{ $black: boolean }>`
