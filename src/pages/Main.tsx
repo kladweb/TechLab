@@ -22,13 +22,13 @@ export const Main = () => {
     <PopularLayout/>
     <Directions></Directions>
     <AboutUs></AboutUs>
-     {/*<ExpectationLayout></ExpectationLayout>*/}
+     <ExpectationLayout></ExpectationLayout>
     <OurExperts></OurExperts>
     <Advertisement></Advertisement>
     <Reviews></Reviews>
     <SoonStartLayout/>
     <TestBlock></TestBlock>
-     {/*<QuestionsLayout></QuestionsLayout>*/}
+     <QuestionsLayout></QuestionsLayout>
     <FeedbackSection></FeedbackSection>
   </>)
 }
