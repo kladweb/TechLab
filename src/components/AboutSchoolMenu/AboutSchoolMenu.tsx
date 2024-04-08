@@ -5,22 +5,21 @@ export const AboutSchoolMenu = () => {
   const menuItems: string[] = ['About school', 'Our experts', 'Certification', 'Contacts'];
 
   return (
-    <>
-      <StyledMenuContainer>
-        <StyledContainer>
-          <StyledMenuItems>
-            {
-              menuItems.map((item: string, index: number) =>
-                <StyledMenuItem key={index} href='#'>
-                  <StyledMenuName>
-                    {item}
-                  </StyledMenuName>
-                </StyledMenuItem>
-              )
-            }
-          </StyledMenuItems>
-        </StyledContainer>
-      </StyledMenuContainer>
-    </>
+    <StyledMenuContainer>
+      <StyledContainer>
+        <StyledMenuItems>
+          {
+            menuItems.map((item: string, index: number) =>
+              <StyledMenuItem
+                key={index} href={`#${item.replace(' ', '').toLowerCase()}`}>
+                <StyledMenuName>
+                  {item}
+                </StyledMenuName>
+              </StyledMenuItem>
+            )
+          }
+        </StyledMenuItems>
+      </StyledContainer>
+    </StyledMenuContainer>
   );
 }

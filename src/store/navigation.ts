@@ -31,7 +31,7 @@ const initialState: NavState = {
         { title: 'All mentors', path: '/' }]
     },
     { title: 'Free Courses', path: '/' },
-    { title: 'About school', path: '/' }]
+    { title: 'About school', path: '/aboutschool' }]
 }
 
 export const navSlice = createSlice({
