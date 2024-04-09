@@ -14,6 +14,7 @@ import { FeedbackSection } from "../components/FeedbackFormSection/FeedbackSecti
 import SoonStartLayout from "../components/SoonStartLayout/SoonStartLayout";
 
 export const Main = () => {
+
   return (
     <>
       <RunLine></RunLine>
