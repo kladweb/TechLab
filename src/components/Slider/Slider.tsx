@@ -14,9 +14,9 @@ import {
 
 import LongArrowRight from "../../assets/icons/LongArrowRight";
 
-export const slidesData = [{ title: "Slide 1" }, { title: "Slide 2" }, { title: "Slide 3" }, { title: "Slide 4" }, { title: "Slide 5" }];
+export const slidesData = [{title: "Slide 1"}, {title: "Slide 2"}, {title: "Slide 3"}, {title: "Slide 4"}, {title: "Slide 5"}];
 
-const Slider = ({ content, nameLink }: { content?: React.ReactNode, nameLink?: string }) => {
+const Slider = ({content, nameLink}: { content?: React.ReactNode, nameLink?: string }) => {
   return (
     <SliderContainer>
       <Swiper
@@ -28,8 +28,10 @@ const Slider = ({ content, nameLink }: { content?: React.ReactNode, nameLink?: s
         pagination={{
           type: 'fraction',
         }}
-        onSlideChange={() => { }}
-        onSwiper={(swiper: any) => console.log(swiper)}
+        onSlideChange={() => {
+        }}
+        onSwiper={(swiper: any) => {
+        }}
       >
         <SwiperSlide><Slide>{content}</Slide></SwiperSlide>
         <SwiperSlide><Slide>{content}</Slide></SwiperSlide>

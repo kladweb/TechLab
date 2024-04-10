@@ -14,23 +14,20 @@ import { FeedbackSection } from "../components/FeedbackFormSection/FeedbackSecti
 import SoonStartLayout from "../components/SoonStartLayout/SoonStartLayout";
 
 export const Main = () => {
-
-  return (
-    <>
-      <RunLine></RunLine>
-      <Header></Header>
-      <MainInfo></MainInfo>
-      <PopularLayout />
-      <Directions></Directions>
-      <AboutUs></AboutUs>
-      <ExpectationLayout></ExpectationLayout>
-      <OurExperts></OurExperts>
-      <Advertisement></Advertisement>
-      <Reviews></Reviews>
-      <SoonStartLayout />
-      <TestBlock></TestBlock>
-      <QuestionsLayout></QuestionsLayout>
-      <FeedbackSection></FeedbackSection>
-    </>
-  );
-};
+  return (<>
+    <RunLine></RunLine>
+    <Header></Header>
+    <MainInfo></MainInfo>
+    <PopularLayout />
+    <Directions></Directions>
+    <AboutUs></AboutUs>
+    <ExpectationLayout></ExpectationLayout>
+    <OurExperts></OurExperts>
+    <Advertisement></Advertisement>
+    <Reviews></Reviews>
+    <SoonStartLayout />
+    <TestBlock></TestBlock>
+    <QuestionsLayout></QuestionsLayout>
+    <FeedbackSection></FeedbackSection>
+  </>);
+}

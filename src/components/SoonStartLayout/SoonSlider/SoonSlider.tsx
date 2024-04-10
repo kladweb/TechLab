@@ -51,7 +51,8 @@ const SoonSlider = ({content, nameLink}: { content?: any[], nameLink?: string })
         }}
         onSlideChange={() => {
         }}
-        onSwiper={(swiper: any) => console.log(swiper)}
+        onSwiper={(swiper: any) => {
+        }}
       >
         {
           dataSoonArrayOfSix.map((courses: ISoonCourse[], index: number) =>
