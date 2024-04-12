@@ -122,6 +122,7 @@ export const StyledAccordeonContent = styled.li<{
   $isOpen?: boolean;
   $blackAcc?: boolean;
 }>`
+  white-space: pre-wrap;
   padding: 20px 30px;
   font-family: Raleway;
   font-size: 22px;
