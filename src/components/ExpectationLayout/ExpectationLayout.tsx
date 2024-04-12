@@ -16,20 +16,23 @@ import { backgroundColor } from "../../styledConstantsColors";
 const ourAccordeonData = [
   {
     title: "Course enrollment with a group",
-    content:
-      "Over 50 courses across 3 domains that will help you master the profession under the guidance of attentive educators.  Intermediate assignments, teamwork, and individual support from our teachers.",
+    content: `Over 50 courses across 3 domains that will help you master the profession under the guidance of attentive educators.\nIntermediate assignments, teamwork, and individual support from our teachers.`,
   },
   {
-    title: "Self-paced learning",
+    title: "Self - paced learning",
     content:
-      "Self-paced learning empowers individuals to tailor their educational journey to their own schedule and pace, fostering autonomy and flexibility. It allows learners to delve deeply into topics of interest, progress at their own speed, and absorb material more effectively, catering to diverse learning styles and preferences.",
+      "Self-paced learning empowers individuals to tailor their educational journey to their own schedule and pace, fostering autonomy and flexibility.\nIt allows learners to delve deeply into topics of interest, progress at their own speed, and absorb material more effectively, catering to diverse learning styles and preferences.",
   },
   {
-    title: "Mentored learning",
+    title: "Learning with a mentor",
     content:
-      "Learning with a mentor provides invaluable guidance, support, and expertise, accelerating personal and professional growth. Through personalized feedback, real-world insights, and one-on-one interactions, mentors help learners navigate challenges, cultivate skills, and achieve their goals with confidence and clarity.",
+      "Learning with a mentor provides invaluable guidance, support, and  expertise, accelerating personal and professional growth.\nThrough  personalized feedback, real-world insights, and one-on-one interactions,  mentors help learners navigate challenges, cultivate skills, and  achieve their goals with confidence and clarity.",
   },
-  { title: "Skill enhancement lessons", content: "Содержимое строки 4" },
+  {
+    title: "Skill enhancement lessons ",
+    content:
+      "Skill enhancement lessons offer structured opportunities for individuals to refine their abilities, acquire new knowledge, and stay competitive in today's dynamic world.\nThrough focused instruction, hands-on practice, and constructive feedback, participants can sharpen their skills, expand their capabilities, and unlock their full potential in their chosen field or endeavor.",
+  },
 ];
 
 const ExpectationLayout = () => {
