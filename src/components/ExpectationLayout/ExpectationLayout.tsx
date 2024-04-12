@@ -13,6 +13,17 @@ import {
 } from "../../styledConstants";
 import { backgroundColor } from "../../styledConstantsColors";
 
+const ourAccordeonData = [
+  {
+    title: "Course enrollment with a group",
+    content:
+      "Over 50 courses across 3 domains that will help you master the profession under the guidance of attentive educators.  Intermediate assignments, teamwork, and individual support from our teachers.",
+  },
+  { title: "Self-paced learning", content: "Содержимое строки 2" },
+  { title: "Mentored learning", content: "Содержимое строки 3" },
+  { title: "Skill enhancement lessons", content: "Содержимое строки 4" },
+];
+
 const ExpectationLayout = () => {
   const { width = 0 } = useWindowSize();
   return (
@@ -30,7 +41,7 @@ const ExpectationLayout = () => {
                 study in groups, individually, purchase lessons, or seek
                 assistance from a mentor.
               </StyledExpectationText>
-              <Accordeon isBlack={false} />
+              <Accordeon accordeonData={ourAccordeonData} isBlack={false} />
             </StyledFlex>
           ) : (
             <>
@@ -39,7 +50,7 @@ const ExpectationLayout = () => {
                 study in groups, individually, purchase lessons, or seek
                 assistance from a mentor.
               </StyledExpectationText>
-              <Accordeon isBlack={false} />
+              <Accordeon accordeonData={ourAccordeonData} isBlack={false} />
             </>
           )}
         </StyledContainer>
