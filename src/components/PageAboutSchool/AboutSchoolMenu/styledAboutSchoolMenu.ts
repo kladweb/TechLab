@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { colors, hoverBtnColor } from "../../styledConstantsColors";
+import { colors, hoverBtnColor } from "../../../styledConstantsColors";
 
 export const StyledMenuContainer = styled.div`
   position: relative;

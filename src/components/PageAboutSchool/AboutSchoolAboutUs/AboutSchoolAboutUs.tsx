@@ -1,4 +1,4 @@
-import { StyledContainer, StyledFrameHeader } from "../../styledConstants";
+import { StyledContainer, StyledFrameHeader } from "../../../styledConstants";
 import React from "react";
 import {
   StyledAboutSubTitle,
@@ -14,7 +14,7 @@ import {
   StyledYellowCard
 } from "./styledAboutSchoolAboutUs";
 
-import aboutUs from '../../assets/img/AboutUs.png'
+import aboutUs from '../../../assets/img/AboutUs.png'
 
 interface IwhatYouFind {
   courses: 100,

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { backgroundColor, colors } from "../../styledConstantsColors";
+import { backgroundColor, colors } from "../../../styledConstantsColors";
 
 export const StyledAboutUsBlock = styled.div`
   width: 100%;

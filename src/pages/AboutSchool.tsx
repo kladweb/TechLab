@@ -1,8 +1,12 @@
 import { useEffect } from "react";
 import { RunLine } from "../components/RunLine/RunLine";
 import { Header } from "../components/Header/Header";
-import { AboutSchoolMenu } from "../components/AboutSchoolMenu/AboutSchoolMenu";
-import { AboutSchoolAboutUs } from "../components/AboutSchoolAboutUs/AboutSchoolAboutUs";
+import { AboutSchoolMenu } from "../components/PageAboutSchool/AboutSchoolMenu/AboutSchoolMenu";
+import { AboutSchoolAboutUs } from "../components/PageAboutSchool/AboutSchoolAboutUs/AboutSchoolAboutUs";
+import { FeedbackSection } from "../components/FeedbackFormSection/FeedbackSection";
+import { Contacts } from "../components/PageAboutSchool/Contacts/Contacts";
+import { Certification } from "../components/PageAboutSchool/Certification/Certification";
+import { AboutSchoolOurExperts } from "../components/PageAboutSchool/AboutSchoolOurExperts/AboutSchoolOurExperts";
 
 export const AboutSchool = () => {
 
@@ -12,10 +16,14 @@ export const AboutSchool = () => {
 
   return (
     <>
-      <RunLine/>
-      <Header/>
-      <AboutSchoolMenu/>
-      <AboutSchoolAboutUs/>
+      <RunLine />
+      <Header />
+      <AboutSchoolMenu />
+      <AboutSchoolAboutUs />
+      <AboutSchoolOurExperts />
+      <Certification />
+      <Contacts />
+      <FeedbackSection />
     </>
   )
 }

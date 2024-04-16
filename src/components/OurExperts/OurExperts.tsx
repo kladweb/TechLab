@@ -21,21 +21,134 @@ import tom from '../../assets/img/expert3.png'
 import andrus from '../../assets/img/expert5.png'
 import { RightSideLink } from "../LinkWithRightArrow/LinkWithRightArrow";
 
+export interface Iexpert {
+  name: string,
+  color: string,
+  desc: string,
+  src: string;
+  course: string,
+  info: string,
+  price: number
+}
 
-const experts = [
-  {name: 'Juri Ratas', color: colors.brand.orange, desc: 'Co-founder of the programming academy', src: yuri},
-  {name: 'Alice Berg', color: colors.brand.turquoise, desc: 'Co-founder of the programming academy', src: alice},
-  {name: 'Tom Watson', color: colors.brand.green, desc: 'Co-founder of the programming academy', src: tom},
-  {name: 'Andrus Kask', color: colors.brand.turquoise, desc: 'Co-founder of the programming academy', src: andrus},
-  {name: 'Juri Ratas', color: colors.brand.orange, desc: 'Co-founder of the programming academy', src: yuri},
-  {name: 'Alice Berg', color: colors.brand.turquoise, desc: 'Co-founder of the programming academy', src: alice},
-  {name: 'Juri Ratas', color: colors.brand.orange, desc: 'Co-founder of the programming academy', src: yuri},
-  {name: 'Alice Berg', color: colors.brand.turquoise, desc: 'Co-founder of the programming academy', src: alice},
-  {name: 'Tom Watson', color: colors.brand.green, desc: 'Co-founder of the programming academy', src: tom},
-  {name: 'Andrus Kask', color: colors.brand.turquoise, desc: 'Co-founder of the programming academy', src: andrus},
-  {name: 'Juri Ratas', color: colors.brand.orange, desc: 'Co-founder of the programming academy', src: yuri},
-  {name: 'Alice Berg', color: colors.brand.turquoise, desc: 'Co-founder of the programming academy', src: alice}
-]
+export const experts: Iexpert[] = [
+  {
+    name: 'Juri Ratas',
+    color: colors.brand.orange,
+    desc: 'Co-founder of the programming academy',
+    src: yuri,
+    course: 'Design',
+    info: 'Collaboration is integral to Juri’s design philosophy. He seamlessly integrates with multidisciplinary teams fostering an environment where design aligns with development goals.',
+    price: 30
+  },
+  {
+    name: 'Alice Berg',
+    color: colors.brand.turquoise,
+    desc: 'Co-founder of the TechLab',
+    src: alice,
+    course: 'Data science',
+    info: 'Alice actively contributes to the community by publishing research papers, participating in industry' +
+      ' conferences, and mentoring aspiring data scientists.',
+    price: 30
+  },
+  {
+    name: 'Tom Watson',
+    color: colors.brand.green,
+    desc: 'Co-founder of the programming academy',
+    src: tom,
+    course: 'Programming',
+    info: 'A seasoned programming virtuoso, stands as a beacon of excellence in the field. One of Tom\'s standout' +
+      ' qualities is his knack for crafting elegant and efficient code.',
+    price: 30
+  },
+  {
+    name: 'Andrus Kask',
+    color: colors.brand.turquoise,
+    desc: 'Co-founder of the TechLab',
+    src: andrus,
+    course: 'Programming',
+    info: 'A seasoned programming virtuoso, stands as a beacon of excellence in the field. One of Tom\'s standout' +
+      ' qualities is his knack for crafting elegant and efficient code.',
+    price: 30
+  },
+  {
+    name: 'Juri Ratas',
+    color: colors.brand.orange,
+    desc: 'Co-founder of the programming academy',
+    src: yuri,
+    course: 'Design',
+    info: 'Collaboration is integral to Juri’s design philosophy. He seamlessly integrates with multidisciplinary teams fostering an environment where design aligns with development goals.',
+    price: 30
+  },
+  {
+    name: 'Alice Berg',
+    color: colors.brand.turquoise,
+    desc: 'Co-founder of the TechLab',
+    src: alice,
+    course: 'Data science',
+    info: 'Alice actively contributes to the community by publishing research papers, participating in industry' +
+      ' conferences, and mentoring aspiring data scientists.',
+    price: 30
+  },
+  {
+    name: 'Juri Ratas',
+    color: colors.brand.orange,
+    desc: 'Co-founder of the programming academy',
+    src: yuri,
+    course: 'Design',
+    info: 'Collaboration is integral to Juri’s design philosophy. He seamlessly integrates with multidisciplinary teams fostering an environment where design aligns with development goals.',
+    price: 30
+  },
+  {
+    name: 'Alice Berg',
+    color: colors.brand.turquoise,
+    desc: 'Co-founder of the TechLab',
+    src: alice,
+    course: 'Data science',
+    info: 'Alice actively contributes to the community by publishing research papers, participating in industry' +
+      ' conferences, and mentoring aspiring data scientists.',
+    price: 30
+  },
+  {
+    name: 'Tom Watson',
+    color: colors.brand.green,
+    desc: 'Co-founder of the programming academy',
+    src: tom,
+    course: 'Programming',
+    info: 'A seasoned programming virtuoso, stands as a beacon of excellence in the field. One of Tom\'s standout' +
+      ' qualities is his knack for crafting elegant and efficient code.',
+    price: 30
+  },
+  {
+    name: 'Andrus Kask',
+    color: colors.brand.turquoise,
+    desc: 'Co-founder of the TechLab',
+    src: andrus,
+    course: 'Programming',
+    info: 'A seasoned programming virtuoso, stands as a beacon of excellence in the field. One of Tom\'s standout' +
+      ' qualities is his knack for crafting elegant and efficient code.',
+    price: 30
+  },
+  {
+    name: 'Juri Ratas',
+    color: colors.brand.orange,
+    desc: 'Co-founder of the programming academy',
+    src: yuri,
+    course: 'Design',
+    info: 'Collaboration is integral to Juri’s design philosophy. He seamlessly integrates with multidisciplinary teams fostering an environment where design aligns with development goals.',
+    price: 30
+  },
+  {
+    name: 'Alice Berg',
+    color: colors.brand.turquoise,
+    desc: 'Co-founder of the TechLab',
+    src: alice,
+    course: 'Data science',
+    info: 'Alice actively contributes to the community by publishing research papers, participating in industry' +
+      ' conferences, and mentoring aspiring data scientists.',
+    price: 30
+  }
+];
 
 export const OurExperts = () => {
   const {width = 0} = useWindowSize()
@@ -59,7 +172,7 @@ export const OurExperts = () => {
       className="expertsSwiper">
       {experts.map((expert, index) =>
         <SwiperSlide key={index}>
-          <ExpertCard name={expert.name} src={expert.src} desc={expert.desc} color={expert.color}/>
+          <ExpertCard name={expert.name} src={expert.src} desc={expert.desc} color={expert.color} />
         </SwiperSlide>
       )}
     </Swiper>}
@@ -77,7 +190,7 @@ export const OurExperts = () => {
       className="expertsSwiper">
       {experts.map((expert, index) =>
         <SwiperSlide key={index}>
-          <ExpertCard name={expert.name} src={expert.src} desc={expert.desc} color={expert.color}/>
+          <ExpertCard name={expert.name} src={expert.src} desc={expert.desc} color={expert.color} />
         </SwiperSlide>
       )}
     </Swiper>}
@@ -91,10 +204,10 @@ export const OurExperts = () => {
       className="expertsSwiper">
       {experts.map((expert, index) =>
         <SwiperSlide key={index}>
-          <ExpertCard name={expert.name} src={expert.src} desc={expert.desc} color={expert.color}/>
+          <ExpertCard name={expert.name} src={expert.src} desc={expert.desc} color={expert.color} />
         </SwiperSlide>
       )}
     </Swiper>}
-    <RightSideLink text={'All TechLab teachers'} path={'/'} isBlack isRightSided/>
+    <RightSideLink text={'All TechLab teachers'} path={'/'} isBlack isRightSided />
   </StyledExpertSectionWrap>)
 }

@@ -23,11 +23,9 @@ const SoonStartLayout = () => {
           Change your life and start a new career with our help.
         </StyledFrameText>
       </StyledContainer>
-
       <SoonSlider/>
       <SoonSliderMin/>
       <SoonSliderMobile/>
-
       <StyledContainer>
         <StyledSliderLink to="#">
           All upcoming courses{screenWidth > 1024 ? <LongArrowRight/> : <ArrowRight/>}

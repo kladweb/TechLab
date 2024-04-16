@@ -1,4 +1,4 @@
-import { StyledContainer } from "../../styledConstants";
+import { StyledContainer } from "../../../styledConstants";
 import { StyledMenuContainer, StyledMenuItems, StyledMenuItem, StyledMenuName } from "./styledAboutSchoolMenu";
 
 export const AboutSchoolMenu = () => {
