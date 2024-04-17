@@ -1,12 +1,14 @@
 import styled from "styled-components";
-import { colors, hoverBtnColor } from "../../styledConstantsColors";
+import { colors, hoverBtnColor } from "../../../styledConstantsColors";
 
-export const StyledMenuContainer = styled.div`
-  position: relative;
-  margin-top: 132px;
+export const StyledMenuContainer = styled.div<{ $isRunlineClosed: boolean }>`
+  position: fixed;
+  top:${props => props.$isRunlineClosed ? '82px' : '132px'};
+  width: 100%;
   background: ${colors.neutral.white};
   border-top: 1px solid ${colors.neutral.mediumGray};
   border-bottom: 1px solid ${colors.neutral.mediumGray};
+  z-index: 100;
 
   @media (max-width: 1439.5px) {
     margin-top: 110px;
@@ -32,6 +34,7 @@ export const StyledMenuItems = styled.div`
   align-items: center;
   width: 100%;
   height: 108px;
+  z-index: 10;
 
   @media (max-width: 1439.5px) {
     height: 64px;

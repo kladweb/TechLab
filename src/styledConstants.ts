@@ -51,7 +51,7 @@ export const StyledFrameText = styled.p<{ $black: boolean }>`
   font-style: normal;
   font-weight: 400;
   line-height: 40px;
-  margin-bottom: 50px;
+  margin: 20px 0 50px;
   color: ${(props) =>
     props.$black
       ? typographyColor.lightBG.black

@@ -20,7 +20,11 @@ const AccordeonItem = ({ panel, onClick, isOpen, isBlack }: IAccordeonItem) => {
 
   return (
     <div>
-      <StyledAccordeonPanel $isOpen={isOpen} onClick={onClick} $blackAcc={isBlack}>
+      <StyledAccordeonPanel
+        $isOpen={isOpen}
+        onClick={onClick}
+        $blackAcc={isBlack}
+      >
         <div>
           <h3>{panel.title}</h3>
           <button>
@@ -28,7 +32,8 @@ const AccordeonItem = ({ panel, onClick, isOpen, isBlack }: IAccordeonItem) => {
           </button>
         </div>
       </StyledAccordeonPanel>
-      <StyledAccordeonCollapse $blackAcc={isBlack}
+      <StyledAccordeonCollapse
+        $blackAcc={isBlack}
         $isOpen={isOpen}
         style={
           isOpen ? { height: itemRef.current?.scrollHeight } : { height: "0px" }

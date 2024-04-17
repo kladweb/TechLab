@@ -12,25 +12,28 @@ import PopularLayout from "../components/PopularCoursesLayout/PopularLayout";
 import { TestBlock } from "../components/TestBlock/TestBlock";
 import { FeedbackSection } from "../components/FeedbackFormSection/FeedbackSection";
 import SoonStartLayout from "../components/SoonStartLayout/SoonStartLayout";
+import { useEffect } from "react";
 
 export const Main = () => {
 
-  return (
-    <>
-      <RunLine></RunLine>
-      <Header></Header>
-      <MainInfo></MainInfo>
-      <PopularLayout />
-      <Directions></Directions>
-      <AboutUs></AboutUs>
-      <ExpectationLayout></ExpectationLayout>
-      <OurExperts></OurExperts>
-      <Advertisement></Advertisement>
-      <Reviews></Reviews>
-      <SoonStartLayout />
-      <TestBlock></TestBlock>
-      <QuestionsLayout></QuestionsLayout>
-      <FeedbackSection></FeedbackSection>
-    </>
-  );
-};
+  useEffect(() => {
+    document.title = 'TechLab';
+  }, []);
+
+  return (<>
+    <RunLine></RunLine>
+    <Header></Header>
+    <MainInfo></MainInfo>
+    <PopularLayout />
+    <Directions></Directions>
+    <AboutUs></AboutUs>
+    <ExpectationLayout></ExpectationLayout>
+    <OurExperts></OurExperts>
+    <Advertisement></Advertisement>
+    <Reviews></Reviews>
+    <SoonStartLayout />
+    <TestBlock></TestBlock>
+    <QuestionsLayout></QuestionsLayout>
+    <FeedbackSection></FeedbackSection>
+  </>);
+}

@@ -1,23 +1,31 @@
 import React, { useState } from "react";
 
-import {
-  StyledAccordeon,
-} from "./StyledAccordeon";
+import { StyledAccordeon } from "./StyledAccordeon";
 import AccordeonItem from "./AccordeonItem";
 
-export const accordeonData = [
-  { title: "Строка 1", content: "Содержимое строки 1" },
-  { title: "Строка 2", content: "Содержимое строки 2" },
-  { title: "Строка 3", content: "Содержимое строки 3" },
-];
+// export const accordeonData = [
+//   { title: "Строка 1", content: "Содержимое строки 1" },
+//   { title: "Строка 2", content: "Содержимое строки 2" },
+//   { title: "Строка 3", content: "Содержимое строки 3" },
+// ];
 
-const Accordeon = ({isBlack}: {isBlack: boolean}) => {
-  const [activeIndex, setActiveIndex] = useState<number | null>(0);
+interface AccordeonData {
+  title: string;
+  content: string;
+}
+interface AccordeonProps {
+  isBlack: boolean;
+  accordeonData: AccordeonData[];
+}
+
+const Accordeon: React.FC<AccordeonProps> = ({ isBlack, accordeonData }) => {
+  const [activeIndex, setActiveIndex] = useState<number | null>();
 
   return (
     <StyledAccordeon>
       {accordeonData.map((panel, index) => (
-        <AccordeonItem isBlack={isBlack}
+        <AccordeonItem
+          isBlack={isBlack}
           key={index}
           isOpen={activeIndex === index}
           onClick={() =>
