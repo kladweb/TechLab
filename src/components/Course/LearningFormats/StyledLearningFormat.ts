@@ -41,3 +41,13 @@ export const StyledLearningSubtitleText = styled.div`
   letter-spacing: 0.32px;
   color: ${colors.brand.violet};
 `;
+
+export const StyledLearningList = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
+export const StyledLearningFormatItem = styled.div``;
+export const StyledLearningFormatItemTitle = styled.div``;
+export const StyledLearningFormatList = styled.div``;
+export const StyledLearningFormatListItem = styled.div``;

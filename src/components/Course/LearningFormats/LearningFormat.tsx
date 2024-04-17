@@ -5,12 +5,15 @@ import {
   StyledLearningWrap,
   StyledLearningSubtitle,
   StyledLearningSubtitleText,
+  StyledLearningList,
 } from "./StyledLearningFormat";
+import { LearningItem } from "./LearningItem";
+import Accordeon from "../../Accordeon/Accordeon";
 
 const learningFormatList = [
   {
     title: "Learning in Group",
-    list: [
+    links: [
       "Interactive group learning",
       "Personal сhat support",
       "Online video lessons",
@@ -21,7 +24,7 @@ const learningFormatList = [
   },
   {
     title: "Self-paced learning",
-    list: [
+    links: [
       "Flexible learning format",
       "Online video lessons",
       "Course upgrade",
@@ -29,7 +32,7 @@ const learningFormatList = [
   },
   {
     title: "Unit of lessons",
-    list: [
+    links: [
       "Create your ideal course",
       "Flexible learning format",
       "Online video lessons",
@@ -54,6 +57,20 @@ export const LearningFormat = () => {
               You can also elevate your professional level with the assistance
               of our mentors.
             </StyledLearningSubtitleText>
+            <StyledLearningList>
+              {learningFormatList.map((item) => (
+                // <LearningItem
+                //   key={item.title}
+                //   title={item.title}
+                //   links={item.links}
+                // ></LearningItem>
+                <Accordeon
+                  key={item.title}
+                  // accordeonData={item}
+                  isBlack={true}
+                />
+              ))}
+            </StyledLearningList>
           </StyledLearningFormatContainer>
         </StyledLearningWrap>
       </StyledLearningContainer>
