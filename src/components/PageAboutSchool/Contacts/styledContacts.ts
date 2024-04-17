@@ -1,10 +1,10 @@
 import styled from "styled-components";
 import { backgroundColor, colors } from "../../../styledConstantsColors";
-export const StyledContactsBlock = styled.div`
+export const StyledContactsBlock = styled.div<{ $isRunlineClosed: boolean }>`
   width: 100%;
   padding: 100px 0 120px;
   background: ${backgroundColor.champagne};
-  scroll-margin-top: 130px;
+  scroll-margin-top: ${props => props.$isRunlineClosed ? '120px' : '160px'};
 
   @media (max-width: 1439.5px) {
     padding: 80px 0 100px;

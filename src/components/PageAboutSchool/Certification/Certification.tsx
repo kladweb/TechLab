@@ -8,6 +8,7 @@ import {
 import { StyledContainer, StyledFrameHeader, StyledFrameText } from "../../../styledConstants";
 import { ReactComponent as TickViolet } from '../../../assets/icons/tick_violet.svg';
 import certificate from '../../../assets/img/Certificate2.png'
+import { useAppSelector } from "../../../store/store";
 
 interface IcertificateFeature {
   name: string,
@@ -15,6 +16,7 @@ interface IcertificateFeature {
 }
 
 export const Certification = () => {
+  const isRunlineClosed = useAppSelector((state) => state.runline.isClosed);
   const certificateFeatures: IcertificateFeature[] = [
     {
       name: 'Career advancement',
@@ -35,7 +37,7 @@ export const Certification = () => {
   ]
 
   return (
-    <StyledCertificationBlock id='certification'>
+    <StyledCertificationBlock id='certification' $isRunlineClosed={isRunlineClosed}>
       <StyledContainer>
         <StyledFrameHeader>
           <span>Certification</span>

@@ -1,8 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import {
-  StyledMentorCardsContainer,
-  StyledAboutSchoolOurExperts,
-  StyledDescription,
+  StyledMentorCardsContainer, StyledAboutSchoolOurExperts, StyledDescription,
   StyledDescriptionsContainer, StyledMentorsHead, StyledViewMoreBtn, StyledViewMoreText
 } from "./styledAboutSchoolOurExperts";
 import { StyledContainer, StyledFrameHeader } from "../../../styledConstants";
@@ -11,8 +9,10 @@ import type { Iexpert } from "../../OurExperts/OurExperts";
 import { MentorCard } from "./MentorCard/MentorCard";
 import { DownArrow, UpArrow } from "../../../assets/icons/Arrows";
 import { useWindowSize } from "../../../hooks/useWindowSize";
+import { useAppSelector } from "../../../store/store";
 
 export const AboutSchoolOurExperts = () => {
+  const isRunlineClosed = useAppSelector((state) => state.runline.isClosed);
   const viewRef = useRef(null);
   const {width = 0} = useWindowSize();
 
@@ -52,13 +52,13 @@ export const AboutSchoolOurExperts = () => {
     setTimeout(() => {
       if (viewRef.current) {
         const elem: Element = viewRef.current;
-        elem.scrollIntoView({block: 'start'});
+        elem.scrollIntoView({block: 'center'});
       }
     }, 0);
   }
 
   return (
-    <StyledAboutSchoolOurExperts id='ourexperts'>
+    <StyledAboutSchoolOurExperts id='ourexperts' $isRunlineClosed={isRunlineClosed}>
       <StyledContainer>
         <StyledFrameHeader>
           Our <span>experts</span>
@@ -80,7 +80,7 @@ export const AboutSchoolOurExperts = () => {
         <StyledMentorsHead>
           Choose your mentor and <span>Book a consultation</span>
         </StyledMentorsHead>
-        <StyledMentorCardsContainer ref={viewRef}>
+        <StyledMentorCardsContainer ref={viewRef} $isRunlineClosed={isRunlineClosed}>
           {
             expertsView.map((expert: Iexpert, index: number) =>
               <MentorCard

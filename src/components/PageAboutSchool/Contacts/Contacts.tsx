@@ -5,6 +5,7 @@ import {
   StyledContactsElement,
   StyledContactsElements
 } from "./styledContacts";
+import { useAppSelector } from "../../../store/store";
 
 interface Icontact {
   item: string,
@@ -12,7 +13,7 @@ interface Icontact {
 }
 
 export const Contacts = () => {
-
+  const isRunlineClosed = useAppSelector((state) => state.runline.isClosed);
   const contacts: Icontact[] = [
     {item: 'help@techlab.com', name: 'General questions'},
     {item: 'pr@techlab.com', name: 'Press office'},
@@ -21,7 +22,7 @@ export const Contacts = () => {
   ];
 
   return (
-    <StyledContactsBlock id='contacts'>
+    <StyledContactsBlock id='contacts' $isRunlineClosed={isRunlineClosed}>
       <StyledContainer>
         <StyledFrameHeader>
           <span>Contact</span> us

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { backgroundColor, colors } from "../../../../styledConstantsColors";
+import { colors } from "../../../../styledConstantsColors";
 import {
   StyledLinkMore,
   StyledYellowButton

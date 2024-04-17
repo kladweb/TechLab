@@ -1,11 +1,13 @@
+import { useAppSelector } from "../../../store/store";
 import { StyledContainer } from "../../../styledConstants";
 import { StyledMenuContainer, StyledMenuItems, StyledMenuItem, StyledMenuName } from "./styledAboutSchoolMenu";
 
 export const AboutSchoolMenu = () => {
   const menuItems: string[] = ['About school', 'Our experts', 'Certification', 'Contacts'];
+  const isRunlineClosed = useAppSelector((state) => state.runline.isClosed);
 
   return (
-    <StyledMenuContainer>
+    <StyledMenuContainer $isRunlineClosed={isRunlineClosed}>
       <StyledContainer>
         <StyledMenuItems>
           {

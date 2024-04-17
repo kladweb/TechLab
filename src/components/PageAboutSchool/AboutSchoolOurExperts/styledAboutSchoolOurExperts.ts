@@ -1,11 +1,11 @@
 import styled from "styled-components";
 import { backgroundColor, hoverBtnColor } from "../../../styledConstantsColors";
 
-export const StyledAboutSchoolOurExperts = styled.div`
+export const StyledAboutSchoolOurExperts = styled.div<{ $isRunlineClosed: boolean }>`
   width: 100%;
   padding: 100px 0 120px;
   background: ${backgroundColor.champagne};
-  scroll-margin-top: 90px;
+  scroll-margin-top: ${props => props.$isRunlineClosed ? '-10px' : '50px'};
 
   @media (max-width: 1439.5px) {
     padding: 80px 0 100px;
@@ -61,7 +61,7 @@ export const StyledMentorsHead = styled.h4`
   }
 `
 
-export const StyledMentorCardsContainer = styled.div`
+export const StyledMentorCardsContainer = styled.div<{ $isRunlineClosed: boolean }>`
   margin: 24px 0 16px;
   display: flex;
   align-items: flex-start;
@@ -69,7 +69,7 @@ export const StyledMentorCardsContainer = styled.div`
   gap: 24px;
   align-self: stretch;
   flex-wrap: wrap;
-  scroll-margin-top: 230px;
+  scroll-margin-top: ${props => props.$isRunlineClosed ? '70px' : '130px'};
 `
 
 export const StyledViewMoreBtn = styled.div`
@@ -110,9 +110,4 @@ export const StyledViewMoreText = styled.p`
   font-weight: 400;
   line-height: 52px; /* 125% */
   transition: all 0.5s ease-out;
-`
-
-export const StyledViewMoreIcon = styled.img`
-  width: 32px;
-  height: 32px;
 `
