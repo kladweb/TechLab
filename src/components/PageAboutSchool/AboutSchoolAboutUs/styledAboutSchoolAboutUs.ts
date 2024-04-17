@@ -1,11 +1,12 @@
 import styled from "styled-components";
-import { backgroundColor, colors } from "../../styledConstantsColors";
+import { backgroundColor, colors } from "../../../styledConstantsColors";
 
-export const StyledAboutUsBlock = styled.div`
+export const StyledAboutUsBlock = styled.div<{ $isRunlineClosed: boolean }>`
   width: 100%;
   padding: 100px 0 120px;
+  margin-top: 166px;
   background: #FFF;
-  scroll-margin-top: 40px;
+  scroll-margin-top: ${props => props.$isRunlineClosed ? '-20px' : '30px'};
 
   @media (max-width: 1439.5px) {
     padding: 80px 0 100px;
@@ -32,7 +33,7 @@ export const StyledAboutSubTitle = styled.h4`
   font-weight: 600;
   line-height: 50px; /* 125% */
   letter-spacing: 1.6px;
-  
+
   @media (max-width: 1439.5px) {
     margin: 40px 0 16px;
     font-size: 26px;
@@ -64,7 +65,7 @@ export const StyledWelcomeContainer = styled.div`
   width: 100%;
   display: flex;
   gap: 24px;
-  
+
   @media (max-width: 1439.5px) {
     gap: 20px;
   }
@@ -75,7 +76,6 @@ export const StyledWelcomeContainer = styled.div`
 
   @media (max-width: 767.5px) {
     display: flex;
-    //height: 410px;
     flex-direction: column;
     align-items: flex-start;
     align-self: stretch;
@@ -161,7 +161,7 @@ export const StyledWillFindTitle = styled.h4`
   font-weight: 600;
   line-height: 50px; /* 125% */
   letter-spacing: 1.6px;
-  
+
   @media (max-width: 1439.5px) {
     width: 400px;
     font-size: 26px;
@@ -196,7 +196,7 @@ export const StyledWillFindContainer = styled.div`
   align-items: center;
   gap: 24px;
   align-self: stretch;
-  
+
   @media (max-width: 1439.5px) {
     margin-top: 40px;
     gap: 20px;
@@ -329,7 +329,7 @@ export const StyledWhatYouFindAmount = styled.p`
   font-weight: 600;
   line-height: 50px; /* 125% */
   letter-spacing: 1.6px;
-  
+
   @media (max-width: 1439.5px) {
     font-size: 26px;
     line-height: 36px; /* 138.462% */

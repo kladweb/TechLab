@@ -12,8 +12,14 @@ import PopularLayout from "../components/PopularCoursesLayout/PopularLayout";
 import { TestBlock } from "../components/TestBlock/TestBlock";
 import { FeedbackSection } from "../components/FeedbackFormSection/FeedbackSection";
 import SoonStartLayout from "../components/SoonStartLayout/SoonStartLayout";
+import { useEffect } from "react";
 
 export const Main = () => {
+
+  useEffect(() => {
+    document.title = 'TechLab';
+  }, []);
+
   return (<>
     <RunLine></RunLine>
     <Header></Header>
