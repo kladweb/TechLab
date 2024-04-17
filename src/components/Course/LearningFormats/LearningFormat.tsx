@@ -66,7 +66,7 @@ export const LearningFormat = () => {
                 // ></LearningItem>
                 <Accordeon
                   key={item.title}
-                  // accordeonData={item}
+                  accordeonData={item}
                   isBlack={true}
                 />
               ))}
