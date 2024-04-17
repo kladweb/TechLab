@@ -1,9 +1,7 @@
 import { StyledContainer, StyledFrameHeader } from "../../../styledConstants";
 import {
-  StyledContactItem, StyledContactName,
-  StyledContactsBlock,
-  StyledContactsElement,
-  StyledContactsElements
+  StyledContactItem, StyledContactName, StyledContactsBlock,
+  StyledContactsElement, StyledContactsElements
 } from "./styledContacts";
 import { useAppSelector } from "../../../store/store";
 
@@ -14,6 +12,7 @@ interface Icontact {
 
 export const Contacts = () => {
   const isRunlineClosed = useAppSelector((state) => state.runline.isClosed);
+
   const contacts: Icontact[] = [
     {item: 'help@techlab.com', name: 'General questions'},
     {item: 'pr@techlab.com', name: 'Press office'},

@@ -7,15 +7,16 @@ import { FeedbackSection } from "../components/FeedbackFormSection/FeedbackSecti
 import { Contacts } from "../components/PageAboutSchool/Contacts/Contacts";
 import { Certification } from "../components/PageAboutSchool/Certification/Certification";
 import { AboutSchoolOurExperts } from "../components/PageAboutSchool/AboutSchoolOurExperts/AboutSchoolOurExperts";
+import ScrollToHashElement from "../services/ScrollToHashElement";
 
 export const AboutSchool = () => {
-
   useEffect(() => {
     document.title = 'About school';
   }, []);
 
   return (
     <>
+      <ScrollToHashElement />
       <RunLine />
       <Header />
       <AboutSchoolMenu />
