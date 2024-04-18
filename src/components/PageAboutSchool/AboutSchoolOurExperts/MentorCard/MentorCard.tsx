@@ -1,14 +1,8 @@
 import React from "react";
 import {
-  StyledButtonBuy, StyledButtonMore,
-  StyledButtons,
-  StyledBuyContainer,
-  StyledCourse,
-  StyledMentorCard, StyledMentorDescription,
-  StyledMentorHead,
-  StyledMentorIcon, StyledMentorPrise,
-  StyledName,
-  StyledNameContainer
+  StyledButtonBuy, StyledButtonMore, StyledButtons, StyledBuyContainer,
+  StyledCourse, StyledMentorCard, StyledMentorDescription, StyledMentorHead,
+  StyledMentorIcon, StyledMentorPrise, StyledName, StyledNameContainer
 } from "./styledMentorCard";
 import ArrowRight from "../../../../assets/icons/ArrowRight";
 

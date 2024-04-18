@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 
 const ScrollToTop = () => {
-  const {pathname} = useLocation();
+  const {pathname, key} = useLocation();
   const htmlEl = document.querySelector('html');
 
   useEffect(() => {
@@ -13,8 +13,13 @@ const ScrollToTop = () => {
     if (htmlEl) {
       htmlEl.style.scrollBehavior = 'smooth';
     }
-  }, [pathname])
+  }, [pathname]);
+
+  useEffect(() => {
+    window.scrollTo({top: 0, behavior: 'auto'})
+  }, [key]);
+
   return null;
 }
 
-export default ScrollToTop
+export default ScrollToTop;

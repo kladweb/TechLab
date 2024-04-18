@@ -3,27 +3,24 @@ import { colors, hoverBtnColor } from "../../../styledConstantsColors";
 
 export const StyledMenuContainer = styled.div<{ $isRunlineClosed: boolean }>`
   position: fixed;
-  top:${props => props.$isRunlineClosed ? '82px' : '132px'};
+  top: ${props => props.$isRunlineClosed ? '82px' : '132px'};
   width: 100%;
   background: ${colors.neutral.white};
   border-top: 1px solid ${colors.neutral.mediumGray};
   border-bottom: 1px solid ${colors.neutral.mediumGray};
-  z-index: 100;
+  z-index: 3;
 
   @media (max-width: 1439.5px) {
-    margin-top: 110px;
+    top: ${props => props.$isRunlineClosed ? '76px' : '110px'};
   }
 
   @media (max-width: 1023.5px) {
-    margin-top: 106px;
   }
 
   @media (max-width: 767.5px) {
-    margin-top: 90px;
   }
 
   @media (max-width: 479.5px) {
-    margin-top: 90px;
     border: none;
   }
 `

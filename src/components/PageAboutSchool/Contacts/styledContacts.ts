@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { backgroundColor, colors } from "../../../styledConstantsColors";
+
 export const StyledContactsBlock = styled.div<{ $isRunlineClosed: boolean }>`
   width: 100%;
   padding: 100px 0 120px;

@@ -4,7 +4,7 @@ import { backgroundColor, colors } from "../../../styledConstantsColors";
 export const StyledAboutUsBlock = styled.div<{ $isRunlineClosed: boolean }>`
   width: 100%;
   padding: 100px 0 120px;
-  margin-top: 166px;
+  margin-top: ${props => props.$isRunlineClosed ? '116px' : '166px'};
   background: #FFF;
   scroll-margin-top: ${props => props.$isRunlineClosed ? '-20px' : '30px'};
 
