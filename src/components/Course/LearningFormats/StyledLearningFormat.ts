@@ -105,7 +105,7 @@ export const StyledAccordeonLearningItem = styled.div`
       transform: rotate(0deg);
     }
     to {
-      transform: rotate(90deg);
+      transform: rotate(180deg);
     }
   }
 `;
