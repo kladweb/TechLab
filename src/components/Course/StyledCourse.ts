@@ -32,7 +32,8 @@ export const StyledMainInfoWrap = styled.main<{ $isClosedRunline: boolean }>`
     background: url(${lineLeft});
     background-repeat: no-repeat;
     top: 78px;
-    left: -12px;
+    // left: 200px;
+    left: 11%;
     width: 50%;
     height: 100%;
     stroke-width: 2px;
@@ -54,11 +55,10 @@ export const StyledMainInfoWrap = styled.main<{ $isClosedRunline: boolean }>`
     background: url(${lineRight});
     background-repeat: no-repeat;
     top: 168px;
-    right: -220px;
-    // left: 0px;
-    // width: 50%;
-    // height: 100%;
-    width: 837px;
+    // right: 20px;
+    // right: 1%;
+    left: 54%;
+    width: 50%;
     height: 500px;
     flex-shrink: 0;
     // stroke: ${backgroundColor.violet40};

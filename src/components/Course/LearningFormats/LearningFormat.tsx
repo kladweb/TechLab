@@ -4,11 +4,13 @@ import {
   StyledLearningFormatContainer,
   StyledLearningWrap,
   StyledLearningSubtitle,
-  StyledLearningSubtitleText,
+  // StyledLearningSubtitleText,
   StyledLearningList,
 } from "./StyledLearningFormat";
-import { LearningItem } from "./LearningItem";
-import Accordeon from "../../Accordeon/Accordeon";
+// import { LearningItem } from "./LearningItem";
+// import LearningAccordeon from "./LearningAccordeon";
+import LearningList from "./LearningList";
+// import Accordeon from "../../Accordeon/Accordeon";
 
 const learningFormatList = [
   {
@@ -50,26 +52,15 @@ export const LearningFormat = () => {
               Learning <span>formats</span>
             </StyledFrameHeader>
             <StyledLearningSubtitle>
-              Buy the complete course or <span>customize</span> the course to
-              suit your needs.
+              TechLab has ensured that everyone can find training to suit their
+              needs.
             </StyledLearningSubtitle>
-            <StyledLearningSubtitleText>
+            {/* <StyledLearningSubtitleText>
               You can also elevate your professional level with the assistance
               of our mentors.
-            </StyledLearningSubtitleText>
+            </StyledLearningSubtitleText> */}
             <StyledLearningList>
-              {learningFormatList.map((item) => (
-                // <LearningItem
-                //   key={item.title}
-                //   title={item.title}
-                //   links={item.links}
-                // ></LearningItem>
-                <Accordeon
-                  key={item.title}
-                  accordeonData={item}
-                  isBlack={true}
-                />
-              ))}
+              <LearningList items={learningFormatList}></LearningList>
             </StyledLearningList>
           </StyledLearningFormatContainer>
         </StyledLearningWrap>
