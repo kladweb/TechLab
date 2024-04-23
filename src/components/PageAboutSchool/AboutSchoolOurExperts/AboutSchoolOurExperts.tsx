@@ -4,8 +4,8 @@ import {
   StyledDescriptionsContainer, StyledMentorsHead, StyledViewMoreBtn, StyledViewMoreText
 } from "./styledAboutSchoolOurExperts";
 import { StyledContainer, StyledFrameHeader } from "../../../styledConstants";
-import { experts } from "../../OurExperts/OurExperts";
-import type { Iexpert } from "../../OurExperts/OurExperts";
+import { experts } from "../../OurExperts/experts";
+import type { Iexpert } from "../../OurExperts/experts";
 import { MentorCard } from "./MentorCard/MentorCard";
 import { DownArrow, UpArrow } from "../../../assets/icons/Arrows";
 import { useWindowSize } from "../../../hooks/useWindowSize";
@@ -84,7 +84,7 @@ export const AboutSchoolOurExperts = () => {
           {
             expertsView.map((expert: Iexpert, index: number) =>
               <MentorCard
-                key={index}
+                key={expert.id}
                 cardColor={expert.color}
                 mentorName={expert.name}
                 course={expert.course}
