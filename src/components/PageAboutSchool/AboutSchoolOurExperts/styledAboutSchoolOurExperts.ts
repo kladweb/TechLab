@@ -73,6 +73,8 @@ export const StyledMentorCardsContainer = styled.div<{ $isRunlineClosed: boolean
 `
 
 export const StyledViewMoreBtn = styled.div`
+  margin: 0 auto;
+  width: fit-content;
   display: flex;
   justify-content: center;
   align-items: center;

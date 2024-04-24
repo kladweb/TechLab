@@ -11,11 +11,11 @@ import {
 
 import { ReactComponent as Arrow } from "../../assets/MainArrow.svg"
 
-import expert1 from '../../assets/img/expert1.png'
-import expert2 from '../../assets/img/expert2.png'
-import expert3 from '../../assets/img/expert3.png'
-import expert4 from '../../assets/img/expert4.png'
-import expert5 from '../../assets/img/expert5.png'
+import expert1 from "../../assets/img/experts/AndrusKask.png";
+import expert2 from "../../assets/img/experts/JuriRatas.png";
+import expert3 from "../../assets/img/experts/TomWatson.png";
+import expert4 from "../../assets/img/experts/AliceBerg.png";
+import expert5 from "../../assets/img/experts/GerliTusik.png";
 import background from '../../assets/img/ManMainPic.png'
 import backgroundMob from '../../assets/img/ManMainPicMobile.png'
 import { colors } from "../../styledConstantsColors"
