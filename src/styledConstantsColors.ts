@@ -25,6 +25,7 @@ export const colors = {
 export const gradient = {
   violetLight: "linear-gradient(180deg, #8047EB 0%, #2B184F 100%)",
   violetDark: "linear-gradient(180deg, #121213 0%, #1A102D 100%)",
+  violetBlue: "linear-gradient(180deg, #8657DD 0%, #67D1D1 100%)",
   gradient20:
     "linear-gradient(270deg, #65DC6A33 3.17%, #67D1D133 40.07%, #8047EB33 99.9%)",
   gradient50:

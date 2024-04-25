@@ -5,6 +5,10 @@ import { CoursePage } from "../components/Course/CoursePage";
 import { SchoolBenefits } from "../components/Course/SchoolBenefits/SchoolBenefits";
 import { LearningFormat } from "../components/Course/LearningFormats/LearningFormat";
 import { CourseBanner } from "../components/Course/CourseBanner/CourseBanner";
+import { CoursePrices } from "../components/Course/CoursePrices/CoursePrices";
+import { Rating } from "../components/Course/Rating/Rating";
+import { StudentsWorkplace } from "../components/Course/StudentsWorkplace/StudentsWorkplace";
+import { CourseTeachers } from "../components/Course/CourseTeachers/CourseTeachers";
 
 export const Course = () => {
   useEffect(() => {
@@ -19,6 +23,10 @@ export const Course = () => {
       <SchoolBenefits />
       <LearningFormat />
       <CourseBanner />
+      <CoursePrices />
+      <Rating />
+      <CourseTeachers />
+      <StudentsWorkplace />
     </>
   );
 };
