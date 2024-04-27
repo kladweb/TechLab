@@ -24,10 +24,10 @@ import image from "../../assets/img/womanWithNoute.png";
 
 export const CoursePage = () => {
   // const { width = 0 } = useWindowSize();
-  const isClosedRunLine = useAppSelector((state) => state.runline.isClosed);
+  const isRunlineClosed = useAppSelector((state) => state.runline.isClosed);
   return (
     <>
-      <StyledMainInfoWrap $isClosedRunline={isClosedRunLine}>
+      <StyledMainInfoWrap $isRunlineClosed={isRunlineClosed}>
         <StyledContainer>
           <StyledMainWrap>
             <StyledInfoWrap>

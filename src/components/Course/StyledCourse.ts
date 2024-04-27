@@ -15,14 +15,15 @@ export const StyledMainWrap = styled.div`
   justify-content: space-between;
 `;
 
-export const StyledMainInfoWrap = styled.main<{ $isClosedRunline: boolean }>`
+export const StyledMainInfoWrap = styled.main<{ $isRunlineClosed: boolean }>`
   position: relative;
   // height: 580px;
   // width: 100%;
-  height: 680px;
+  height: 688px;
+  // height: ${(props) => (props.$isRunlineClosed ? "588px" : "638px")}
   display: flex;
   padding: ${(props) =>
-    props.$isClosedRunline ? "89px 0 100px" : "139px 0 100px"};
+    props.$isRunlineClosed ? "89px 0 100px" : "139px 0 100px"};
   background: ${gradient.violetDark};
   border-radius: 0px 0px 80px 80px;
   overflow: hidden;
@@ -79,20 +80,20 @@ export const StyledMainInfoWrap = styled.main<{ $isClosedRunline: boolean }>`
   }
   @media (max-width: 1439.5px) {
     padding: ${(props) =>
-      props.$isClosedRunline ? "128px 0 75px" : "163px 0 75px"};
+      props.$isRunlineClosed ? "128px 0 75px" : "163px 0 75px"};
   }
   @media (max-width: 1024px) {
     padding: ${(props) =>
-      props.$isClosedRunline ? "132px 0 89px" : "174px 0 89px"};
+      props.$isRunlineClosed ? "132px 0 89px" : "174px 0 89px"};
     border-radius: 0px 0px 0px 0px;
   }
   @media (max-width: 767.5px) {
     padding: ${(props) =>
-      props.$isClosedRunline ? "104px 0 52px" : "146px 0 52px"};
+      props.$isRunlineClosed ? "104px 0 52px" : "146px 0 52px"};
   }
   @media (max-width: 479.5px) {
     padding: ${(props) =>
-      props.$isClosedRunline ? "124px 0 67px" : "158px 0 67px"};
+      props.$isRunlineClosed ? "124px 0 67px" : "158px 0 67px"};
   }
 `;
 

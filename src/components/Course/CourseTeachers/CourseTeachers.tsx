@@ -11,7 +11,11 @@ import {
   StyledCourseTeachersCardsContainerButton,
   StyledCourseTeachersCardsButton,
 } from "./StyledCourseTeachers";
-import ArrowRight from "../../../assets/img/lineRightDir.svg";
+import ArrowRight from "../../../assets/icons/ArrowLineRight.svg";
+import { experts, Iexpert } from "../../OurExperts/experts";
+import { CourseTeachersCard } from "./CourseTeacherCard";
+
+const TeachersList: Iexpert[] = [...experts];
 
 export const CourseTeachers = () => {
   return (
@@ -29,7 +33,23 @@ export const CourseTeachers = () => {
             our mentors.
           </StyledCourseTeachersText>
         </StyledCourseTeachersContainer>
-        <StyledCourseTeachersCards></StyledCourseTeachersCards>
+        <StyledCourseTeachersCards>
+          {TeachersList.map((expert, index) => {
+            if (expert.course === "Design") {
+              return (
+                <CourseTeachersCard
+                  key={index}
+                  name={expert.name}
+                  desc={expert.desc}
+                  experience={expert.experience}
+                  expItems={expert.expItems}
+                  image={expert.src}
+                />
+              );
+            }
+            return null;
+          })}
+        </StyledCourseTeachersCards>
         <StyledCourseTeachersCardsContainerButton>
           <StyledCourseTeachersCardsButton>
             Go to the mentors' page <img src={ArrowRight} alt="arrow"></img>
