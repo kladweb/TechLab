@@ -7,6 +7,7 @@ import {
 import ArrowRight from "../../../../assets/icons/ArrowRight";
 
 interface MentorCardProps {
+  id: string,
   cardColor: string,
   mentorName: string,
   course: string,
@@ -14,36 +15,29 @@ interface MentorCardProps {
   price: number
 }
 
-export const MentorCard: React.FC<MentorCardProps> =
-  ({
-     cardColor,
-     mentorName,
-     course,
-     src,
-     price
-   }) => {
+export const MentorCard: React.FC<MentorCardProps> = ({id, cardColor, mentorName, course, src, price}) => {
 
-    return (
-      <StyledMentorCard $cardColor={cardColor}>
-        <StyledMentorHead>
-          <StyledNameContainer>
-            <StyledName>{mentorName}</StyledName>
-            <StyledCourse $cardColor={cardColor}>{course}</StyledCourse>
-          </StyledNameContainer>
-          <StyledMentorIcon $cardColor={cardColor} src={src} alt={mentorName} />
-        </StyledMentorHead>
-        <StyledMentorDescription>
-          A seasoned programming virtuoso, stands as a beacon of excellence in the field. One of Tom's standout
-          qualities
-          is his knack for crafting elegant and efficient code.
-        </StyledMentorDescription>
-        <StyledBuyContainer>
-          <StyledMentorPrise>{price} eur / 1 hour</StyledMentorPrise>
-          <StyledButtons>
-            <StyledButtonBuy>Buy</StyledButtonBuy>
-            <StyledButtonMore to="#">Learn more<ArrowRight /></StyledButtonMore>
-          </StyledButtons>
-        </StyledBuyContainer>
-      </StyledMentorCard>
-    );
-  }
+  return (
+    <StyledMentorCard to={`/mentors/${id}`} $cardColor={cardColor}>
+      <StyledMentorHead>
+        <StyledNameContainer>
+          <StyledName>{mentorName}</StyledName>
+          <StyledCourse $cardColor={cardColor}>{course}</StyledCourse>
+        </StyledNameContainer>
+        <StyledMentorIcon $cardColor={cardColor} src={src} alt={mentorName} />
+      </StyledMentorHead>
+      <StyledMentorDescription>
+        A seasoned programming virtuoso, stands as a beacon of excellence in the field. One of Tom's standout
+        qualities
+        is his knack for crafting elegant and efficient code.
+      </StyledMentorDescription>
+      <StyledBuyContainer>
+        <StyledMentorPrise>{price} eur / 1 hour</StyledMentorPrise>
+        <StyledButtons>
+          <StyledButtonBuy>Buy</StyledButtonBuy>
+          <StyledButtonMore to={`/mentors/${id}`}>Learn more<ArrowRight /></StyledButtonMore>
+        </StyledButtons>
+      </StyledBuyContainer>
+    </StyledMentorCard>
+  );
+}

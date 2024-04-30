@@ -4,8 +4,9 @@ import {
   StyledLinkMore,
   StyledYellowButton
 } from "../../../PopularCoursesLayout/PopularCoursesContainer/PopularCard/styledPopularCard";
+import { NavLink } from "react-router-dom";
 
-export const StyledMentorCard = styled.div<{ $cardColor: string }>`
+export const StyledMentorCard = styled(NavLink)<{ $cardColor: string }>`
   display: flex;
   width: 392px;
   height: 408px;

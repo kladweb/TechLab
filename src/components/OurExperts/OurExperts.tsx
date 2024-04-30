@@ -76,6 +76,6 @@ export const OurExperts = () => {
         </SwiperSlide>
       )}
     </Swiper>}
-    <RightSideLink text={'All TechLab teachers'} path={'/'} isBlack isRightSided />
+    <RightSideLink text={'All TechLab teachers'} path={'/aboutschool#ourexperts'} isBlack isRightSided />
   </StyledExpertSectionWrap>)
 }
