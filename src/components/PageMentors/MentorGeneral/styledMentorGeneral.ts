@@ -1,6 +1,5 @@
 import styled from "styled-components";
-import { backgroundColor, colors, gradient, typographyColor, typographyGradient } from "../../../styledConstantsColors";
-import backgroundMentor from "../../../assets/img/backgrounds/Ellipse_violet2.svg";
+import { backgroundColor, colors } from "../../../styledConstantsColors";
 
 export const StyledMentorGeneral = styled.div<{ $isRunlineClosed: boolean }>`
   margin-top: ${props => props.$isRunlineClosed ? '82px' : '132px'};
@@ -37,8 +36,8 @@ export const StyledMentorInfo = styled.div`
   gap: 24px;
 `
 
-export const StyledMentorName = styled.h2`
-  color: ${typographyColor.darkBG.violet};
+export const StyledMentorName = styled.h2<{ $mentorColor: string }>`
+  color: ${props => props.$mentorColor};
   font-family: Raleway;
   font-size: 72px;
   font-style: normal;
@@ -80,68 +79,36 @@ export const StyledInfoExperience = styled.p`
   line-height: 40px; /* 125% */
 `
 
+export const StyledLinkedinLink = styled.a`
+  width: min-content;
+  height: min-content;
+`
 export const StyledLinkedin = styled.img`
   width: 48px;
   height: 48px;
 `
 
-export const StyledButtonBuy = styled.button`
-  display: flex;
-  padding: 14px 40px;
-  justify-content: center;
-  align-items: center;
-  border-radius: 100px;
-  background: ${typographyGradient.G1};
-`
-
-export const StyledButtonText = styled.p`
-  color: ${colors.neutral.darkBlack};
-  font-family: Raleway;
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 30px; /* 125% */
-`
-
-export const StyledMentorFotoGroup = styled.div`
+export const StyledMentorFotoGroup = styled.div<{ $mentorGradient: string }>`
+  position: relative;
   width: 588px;
   height: 550px;
-  //position: relative;
-  //overflow: hidden;
   clip-path: url(#myPath);
-  background: ${gradient.violetLight};
+  background-color: #FFF;
 
-  // & svg {
-  //   //position: absolute;
-  //   //z-index: 0;
-    //     //fill: ${colors.neutral.white};
-  // }
-  //
-
-
+  &::before {
+    content: '';
+    position: absolute;
+    width: 588px;
+    height: 550px;
+    background: ${props => props.$mentorGradient};
+  }
 `
 
-export const StyledMentorFoto = styled.img`
-  position: relative;
-  top: 13px;
-  left: 53px;
-  width: 560px;
-  height: 594px;
+export const StyledMentorFoto = styled.img<{ $mentorSizes: number[] }>`
+  position: absolute;
+  top: ${props => props.$mentorSizes[3] + 'px'};
+  left: ${props => props.$mentorSizes[2] + 'px'};
+  width: ${props => props.$mentorSizes[0] + 'px'};
+  height: ${props => props.$mentorSizes[1] + 'px'};
   flex-shrink: 0;
-  //z-index: 2;
-  //background-color: aqua;
-  
 `
-
-// export const StyledMentorBackground = styled.object`
-//   position: absolute;
-//   width: 588px;
-//   height: 550px;
-//   flex-shrink: 0;
-//
-//   & svg {
-//     width: 100%;
-//     height: 100%;
-//     fill: wheat !important;
-//   }
-// `
