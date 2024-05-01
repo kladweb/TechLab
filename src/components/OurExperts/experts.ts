@@ -157,8 +157,8 @@ const expertsOrder: Iexpert[] = [
   }
 ];
 
-const shuffle = (array: Iexpert[]) => {
-  let m = array.length, t, i;
+const shuffle = (array: Iexpert[]): Iexpert[] => {
+  let m: number = array.length, t, i;
 
   // Пока есть элементы для перемешивания
   while (m) {
@@ -175,5 +175,4 @@ const shuffle = (array: Iexpert[]) => {
   return array;
 }
 
-export const experts = shuffle(expertsOrder);
-
+export const experts: Iexpert[] = shuffle(expertsOrder);
