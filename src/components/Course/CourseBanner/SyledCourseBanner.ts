@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { colors, typographyGradient } from "../../../styledConstantsColors";
-
+// <{ isFixed: boolean }>
 export const StyledCourseContainer = styled.div`
   height: 471px;
   display: flex;

@@ -9,7 +9,7 @@ export const CourseSelection = () => {
     <StyledCourseSelectionContainer>
       <StyledContainer>
         <StyledFrameHeader>
-          <span>Choose or create</span>your course
+          <span>Choose or create</span> your course
         </StyledFrameHeader>
         <StyledFrameText $black>
           You can choose the most suitable learning format with us.

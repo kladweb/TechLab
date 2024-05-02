@@ -87,6 +87,9 @@ export const StyledCourseTeachersCardContainer = styled.div`
   //gap: 1px;
   border-radius: 50px;
   border: 1px solid ${colors.brand.violet};
+  & :hover {
+    background: ${colors.brand.violet};
+  }
 `;
 export const StyledCourseTeacherCardImage = styled.div`
   position: relative;

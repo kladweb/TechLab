@@ -13,7 +13,6 @@ import {
   StyledInfoCourseTitle,
   StyledInfoCourseText,
   StyledInfoContainerDuration,
-  StyledInfoCourseDuration,
   StyledFlexCourse,
   StyledTodayButton,
   StyledViewButton,
@@ -37,23 +36,23 @@ export const CoursePage = () => {
               </StyledFlex>
               <StyledInfoContainer>
                 <StyledInfoCourseFormat>
-                  <StyledInfoCourseTitle>Format: online</StyledInfoCourseTitle>
+                  <StyledInfoCourseTitle>
+                    Format: <span>online</span>
+                  </StyledInfoCourseTitle>
                   <StyledInfoCourseText>
                     video lessons and workshops
                   </StyledInfoCourseText>
                 </StyledInfoCourseFormat>
                 <StyledInfoContainerDuration>
                   <StyledInfoCourseTitle>
-                    Duration:
-                    <StyledInfoCourseDuration>
-                      {" "}
-                      12 months
-                    </StyledInfoCourseDuration>
+                    Duration:<span>12 months</span>
                   </StyledInfoCourseTitle>
                   <StyledInfoCourseText>20 hours per week</StyledInfoCourseText>
                 </StyledInfoContainerDuration>
                 <StyledInfoCourse>
-                  <StyledInfoCourseTitle>Date: 20.12</StyledInfoCourseTitle>
+                  <StyledInfoCourseTitle>
+                    Date: <span>20.12</span>
+                  </StyledInfoCourseTitle>
                   <StyledInfoCourseText>
                     Or any convenient time during self-study
                   </StyledInfoCourseText>

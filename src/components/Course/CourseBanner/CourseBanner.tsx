@@ -9,18 +9,36 @@ import image from "../../../assets/img/ZeusUIux.png";
 
 export const CourseBanner = () => {
   // const [scrollY, setScrollY] = useState(0);
+  // const [isFixed, setIsFixed] = useState(false);
+
   // useEffect(() => {
+  //   // Функция для обработки прокрутки
   //   const handleScroll = () => {
-  //     setScrollY(window.scrollY);
+  //     const currentScrollY = window.scrollY;
+  //     setScrollY(currentScrollY);
+
+  //     // Устанавливаем фиксацию, если scrollY >= 0 и scrollY < 400
+  //     if (currentScrollY >= 0 && currentScrollY < 400) {
+  //       setIsFixed(true);
+  //     } else {
+  //       setIsFixed(false);
+  //     }
   //   };
+
+  //   // Добавляем обработчик события прокрутки
   //   window.addEventListener("scroll", handleScroll);
+
+  //   // Удаляем обработчик события прокрутки при размонтировании компонента
   //   return () => {
   //     window.removeEventListener("scroll", handleScroll);
   //   };
-  // });
+  // }, []);
+
   return (
     <>
-      <StyledCourseContainer>
+      <StyledCourseContainer
+      //  isFixed={isFixed}
+       >
         <StyledCourseWrap>
           <StyledImgContainer>
             <img src={image} alt="zeus"></img>

@@ -23,7 +23,7 @@ export const CourseTeachers = () => {
       <StyledContainer>
         <StyledCourseTeachersContainer>
           <StyledFrameHeader>
-            Meet<span>your team</span>
+            Meet <span>your team</span>
           </StyledFrameHeader>
           <StyledFrameText $black>
             Get to know the course instructors.
