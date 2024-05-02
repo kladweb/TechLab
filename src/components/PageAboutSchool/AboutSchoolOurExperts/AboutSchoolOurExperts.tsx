@@ -85,6 +85,7 @@ export const AboutSchoolOurExperts = () => {
             expertsView.map((expert: Iexpert, index: number) =>
               <MentorCard
                 key={expert.id}
+                id={expert.id}
                 cardColor={expert.color}
                 mentorName={expert.name}
                 course={expert.course}

@@ -43,6 +43,24 @@ export const typographyGradient = {
   G4: "linear-gradient(90deg, #3AC0C0 0.15%, #EC762E 105.2%)",
 };
 
+export const mentorGradient = {
+  violet: "linear-gradient(180deg, #8047EB 0%, #2B184F 100%)",
+  orange: "linear-gradient(180deg, #EC762E 23.27%, rgba(236, 118, 46, 0.24) 91.54%)",
+  green: "linear-gradient(180deg, #65DC6A 0.1%, rgba(101, 220, 106, 0.25) 94.23%)",
+};
+
+export const buttonGradient = {
+  violet: "linear-gradient(90deg, rgba(0,0,0,0) 0.11%, #67D1D1 99.91%)",
+  orange: "linear-gradient(91deg, rgba(0,0,0,0) 0.25%, #8657DD 99.64%)",
+  green: "linear-gradient(84deg, rgba(0,0,0,0) 4.7%, #3AC0C0 101.78%)",
+};
+
+export const buttonColorHover = {
+  violet: "#67D1D1",
+  orange: "#EC762E",
+  green: "#3AC0C0",
+};
+
 export const typographyColor = {
   //цвета текста
   lightBG: {
