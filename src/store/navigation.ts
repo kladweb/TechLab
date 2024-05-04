@@ -28,7 +28,7 @@ const initialState: NavState = {
             title: 'All lessons', path: '/',
             linkSections: [{ title: 'Design', path: '/' }, { title: 'Programming', path: '/' }, { title: 'Data Science', path: '/' }]
         },
-        { title: 'All mentors', path: '/' }]
+        { title: 'All mentors', path: '/aboutschool#ourexperts' }]
     },
     { title: 'Free Courses', path: '/' },
     { title: 'About school', path: '/aboutschool' }]
