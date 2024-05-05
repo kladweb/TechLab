@@ -47,34 +47,32 @@ const coursePricesList = [
 
 export const CoursePrices = () => {
   return (
-    <>
-      <StyledCoursePrices>
-        <StyledContainer>
-          <StyledCoursePricesTitleContainer>
-            <StyledFrameHeader>
-              Course <span>prices</span>
-            </StyledFrameHeader>
-            <StyledCoursePricesTitleText>
-              Buy the complete course or <span>customize</span> the course to
-              suit your needs.
-            </StyledCoursePricesTitleText>
-            <StyledCoursePricesTitleSubText>
-              You can also elevate your professional level with the assistance
-              of our mentors.
-            </StyledCoursePricesTitleSubText>
-          </StyledCoursePricesTitleContainer>
-          <StyledFlex>
-            {coursePricesList.map((item, index) => (
-              <CoursePricesItem
-                key={index}
-                title={item.title}
-                content={item.content}
-                price={item.price}
-              ></CoursePricesItem>
-            ))}
-          </StyledFlex>
-        </StyledContainer>
-      </StyledCoursePrices>
-    </>
+    <StyledCoursePrices>
+      <StyledContainer>
+        <StyledCoursePricesTitleContainer>
+          <StyledFrameHeader>
+            Course <span>prices</span>
+          </StyledFrameHeader>
+          <StyledCoursePricesTitleText>
+            Buy the complete course or <span>customize</span> the course to suit
+            your needs.
+          </StyledCoursePricesTitleText>
+          <StyledCoursePricesTitleSubText>
+            You can also elevate your professional level with the assistance of
+            our mentors.
+          </StyledCoursePricesTitleSubText>
+        </StyledCoursePricesTitleContainer>
+        <StyledFlex>
+          {coursePricesList.map((item, index) => (
+            <CoursePricesItem
+              key={index}
+              title={item.title}
+              content={item.content}
+              price={item.price}
+            ></CoursePricesItem>
+          ))}
+        </StyledFlex>
+      </StyledContainer>
+    </StyledCoursePrices>
   );
 };

@@ -23,7 +23,7 @@ const initialState: NavState = {
           linkSections: [
             {
               title: "Design",
-              path: "/",
+              path: "/course",
               linkSections: [
                 { title: "Web Design", path: "/" },
                 { title: "User Interface Design", path: "/" },

@@ -13,11 +13,15 @@ export const StyledCoursePrices = styled.div`
   height: 831px;
   background: ${colors.neutral.darkBlack};
   border-radius: 0px 0px 80px 80px;
-  overflow: hidden;
+  // overflow: hidden;
   & > * > div {
     align-items: flex-start;
     gap: 22px;
   }
+  background-attachment: fixed;
+  // background-position: center;
+  // background-repeat: no-repeat;
+  // background-size: cover;
 `;
 export const StyledCoursePricesWrap = styled.div`
   width: 1224px;
