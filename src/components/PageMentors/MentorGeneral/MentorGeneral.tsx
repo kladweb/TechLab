@@ -21,16 +21,15 @@ interface MentorGeneralProps {
   course: string
 }
 
-export const MentorGeneral: React.FC<MentorGeneralProps> = (
-  {
-    name,
-    id,
-    desc,
-    experience,
-    expItems,
-    src,
-    course
-  }) => {
+export const MentorGeneral: React.FC<MentorGeneralProps> = ({
+                                                              name,
+                                                              id,
+                                                              desc,
+                                                              experience,
+                                                              expItems,
+                                                              src,
+                                                              course
+                                                            }) => {
   const isRunlineClosed = useAppSelector((state) => state.runline.isClosed);
   const mentorBackground = {
     programming: mentorGradient.green,
@@ -58,7 +57,7 @@ export const MentorGeneral: React.FC<MentorGeneralProps> = (
     aliceberg: [509, 540, 39, 10],
     gerlitusik: [517, 549, 69, 25],
     tuomasartman: [498, 528, 56, 22],
-    karolakarlson: [517, 548, 34, 3],
+    karolakarlson: [577, 548, 15, 28],
     ksenianikkel: [505, 536, 41, 36],
     zanderwhitehurst: [560, 594, 28, 26],
     annalaur: [485, 515, 83, 35]
