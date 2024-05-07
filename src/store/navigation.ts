@@ -45,7 +45,7 @@ const initialState: NavState = {
             { title: "Data Science", path: "/" },
           ],
         },
-        { title: "All mentors", path: "/" },
+        { title: "All mentors", path: "/aboutschool#ourexperts" },
       ],
     },
     { title: "Free Courses", path: "/" },

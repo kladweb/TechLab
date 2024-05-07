@@ -38,7 +38,7 @@ export const OurExperts = () => {
       className="expertsSwiper">
       {expertsSlideL.map((expert: Iexpert, index: number) =>
         <SwiperSlide key={index}>
-          <ExpertCard name={expert.name} src={expert.src} desc={expert.desc} color={expert.color} />
+          <ExpertCard id={expert.id} name={expert.name} src={expert.src} desc={expert.desc} color={expert.color} />
         </SwiperSlide>
       )}
     </Swiper>}
@@ -57,7 +57,7 @@ export const OurExperts = () => {
       className="expertsSwiper">
       {expertsSlideS.map((expert, index) =>
         <SwiperSlide key={index}>
-          <ExpertCard name={expert.name} src={expert.src} desc={expert.desc} color={expert.color} />
+          <ExpertCard id={expert.id} name={expert.name} src={expert.src} desc={expert.desc} color={expert.color} />
         </SwiperSlide>
       )}
     </Swiper>}
@@ -72,7 +72,7 @@ export const OurExperts = () => {
       className="expertsSwiper">
       {expertsSlideS.map((expert, index) =>
         <SwiperSlide key={index}>
-          <ExpertCard name={expert.name} src={expert.src} desc={expert.desc} color={expert.color} />
+          <ExpertCard id={expert.id} name={expert.name} src={expert.src} desc={expert.desc} color={expert.color} />
         </SwiperSlide>
       )}
     </Swiper>}

@@ -18,6 +18,8 @@ export const colors = {
     white: "#FFF",
   },
   shades: {
+    violet3: "#BFA3F5",
+    violet4: "#DFD1FA",
     violet6: "#F9F6FE",
   },
 };
@@ -45,8 +47,10 @@ export const typographyGradient = {
 
 export const mentorGradient = {
   violet: "linear-gradient(180deg, #8047EB 0%, #2B184F 100%)",
-  orange: "linear-gradient(180deg, #EC762E 23.27%, rgba(236, 118, 46, 0.24) 91.54%)",
-  green: "linear-gradient(180deg, #65DC6A 0.1%, rgba(101, 220, 106, 0.25) 94.23%)",
+  orange:
+    "linear-gradient(180deg, #EC762E 23.27%, rgba(236, 118, 46, 0.24) 91.54%)",
+  green:
+    "linear-gradient(180deg, #65DC6A 0.1%, rgba(101, 220, 106, 0.25) 94.23%)",
 };
 
 export const buttonGradient = {

@@ -10,6 +10,7 @@ import { Rating } from "../components/Course/Rating/Rating";
 import { StudentsWorkplace } from "../components/Course/StudentsWorkplace/StudentsWorkplace";
 import { CourseTeachers } from "../components/Course/CourseTeachers/CourseTeachers";
 import { CourseSelection } from "../components/Course/CourseSelection/CourseSelection";
+import { CourseWorks } from "../components/Course/CourseWorks/CourseWorks";
 
 export const Course = () => {
   useEffect(() => {
@@ -29,6 +30,7 @@ export const Course = () => {
       <CourseSelection />
       <CourseTeachers />
       <StudentsWorkplace />
+      <CourseWorks />
     </>
   );
 };
