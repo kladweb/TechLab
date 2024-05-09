@@ -1,8 +1,11 @@
+import { useWindowSize } from "../../../hooks/useWindowSize";
 import {
   StyledContainer,
   StyledFlex,
   StyledFrameHeader,
+  StyledSectionSeparator,
 } from "../../../styledConstants";
+import { colors } from "../../../styledConstantsColors";
 import { CoursePricesItem } from "./CoursePricesItem";
 import {
   StyledCoursePrices,
@@ -46,33 +49,41 @@ const coursePricesList = [
 ];
 
 export const CoursePrices = () => {
+  const { width = 0 } = useWindowSize();
   return (
-    <StyledCoursePrices>
-      <StyledContainer>
-        <StyledCoursePricesTitleContainer>
-          <StyledFrameHeader>
-            Course <span>prices</span>
-          </StyledFrameHeader>
-          <StyledCoursePricesTitleText>
-            Buy the complete course or <span>customize</span> the course to suit
-            your needs.
-          </StyledCoursePricesTitleText>
-          <StyledCoursePricesTitleSubText>
-            You can also elevate your professional level with the assistance of
-            our mentors.
-          </StyledCoursePricesTitleSubText>
-        </StyledCoursePricesTitleContainer>
-        <StyledFlex>
-          {coursePricesList.map((item, index) => (
-            <CoursePricesItem
-              key={index}
-              title={item.title}
-              content={item.content}
-              price={item.price}
-            ></CoursePricesItem>
-          ))}
-        </StyledFlex>
-      </StyledContainer>
-    </StyledCoursePrices>
+    <>
+      <StyledCoursePrices>
+        <StyledContainer>
+          <StyledCoursePricesTitleContainer>
+            <StyledFrameHeader>
+              Course <span>prices</span>
+            </StyledFrameHeader>
+            <StyledCoursePricesTitleText>
+              Buy the complete course or <span>customize</span> the course to
+              suit your needs.
+            </StyledCoursePricesTitleText>
+            <StyledCoursePricesTitleSubText>
+              You can also elevate your professional level with the assistance
+              of our mentors.
+            </StyledCoursePricesTitleSubText>
+          </StyledCoursePricesTitleContainer>
+          <StyledFlex>
+            {coursePricesList.map((item, index) => (
+              <CoursePricesItem
+                key={index}
+                title={item.title}
+                content={item.content}
+                price={item.price}
+              ></CoursePricesItem>
+            ))}
+          </StyledFlex>
+        </StyledContainer>
+      </StyledCoursePrices>
+      {width > 1023 && (
+        <StyledSectionSeparator
+          $background={colors.neutral.lightGray}
+        ></StyledSectionSeparator>
+      )}
+    </>
   );
 };

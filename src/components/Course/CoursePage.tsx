@@ -1,6 +1,10 @@
-// import { useWindowSize } from "../../hooks/useWindowSize";
+import { useWindowSize } from "../../hooks/useWindowSize";
 import { useAppSelector } from "../../store/store";
-import { StyledContainer, StyledFlex } from "../../styledConstants";
+import {
+  StyledContainer,
+  StyledFlex,
+  StyledSectionSeparator,
+} from "../../styledConstants";
 import {
   StyledMainInfoWrap,
   StyledMainWrap,
@@ -19,10 +23,11 @@ import {
   StyledImgWrap,
 } from "./StyledCourse";
 import image from "../../assets/img/womanWithNoute.png";
+import { colors } from "../../styledConstantsColors";
 // import imageMobile from "../../assets/img/womanWithNoute1.png";
 
 export const CoursePage = () => {
-  // const { width = 0 } = useWindowSize();
+  const { width = 0 } = useWindowSize();
   const isRunlineClosed = useAppSelector((state) => state.runline.isClosed);
   return (
     <>
@@ -73,6 +78,11 @@ export const CoursePage = () => {
           </StyledMainWrap>
         </StyledContainer>
       </StyledMainInfoWrap>
+      {width > 1023 && (
+        <StyledSectionSeparator
+          $background={colors.shades.violet6}
+        ></StyledSectionSeparator>
+      )}
     </>
   );
 };

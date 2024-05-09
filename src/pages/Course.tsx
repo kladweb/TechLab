@@ -12,6 +12,7 @@ import { CourseTeachers } from "../components/Course/CourseTeachers/CourseTeache
 import { CourseSelection } from "../components/Course/CourseSelection/CourseSelection";
 import { CourseWorks } from "../components/Course/CourseWorks/CourseWorks";
 import { Coursefaq } from "../components/Course/Coursefaq/Coursefaq";
+import { CoursePortfolio } from "../components/Course/CoursePortfolio/CoursePortfolio";
 
 export const Course = () => {
   useEffect(() => {
@@ -32,6 +33,7 @@ export const Course = () => {
       <CourseTeachers />
       <StudentsWorkplace />
       <CourseWorks />
+      <CoursePortfolio />
       <Coursefaq />
     </>
   );
