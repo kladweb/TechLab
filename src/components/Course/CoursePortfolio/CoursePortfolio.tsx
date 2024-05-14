@@ -5,7 +5,7 @@ import {
   StyledSectionSeparator,
 } from "../../../styledConstants";
 import { StyledCoursePotfolio } from "./StyledCoursePortfolio";
-import avatarka from "../../../assets/img/avatarkaWomanCoursePage.png";
+import ava from "../../../assets/img/avatarkaWomanCoursePage.png";
 import project1 from "../../../assets/img/projects1.png";
 import project2 from "../../../assets/img/projects2.png";
 import project3 from "../../../assets/img/projects3.png";
@@ -20,66 +20,85 @@ import project11 from "../../../assets/img/projects11.png";
 import project12 from "../../../assets/img/projects12.png";
 import { useWindowSize } from "../../../hooks/useWindowSize";
 import { backgroundColor } from "../../../styledConstantsColors";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { A11y, Navigation, Pagination } from "swiper/modules";
+import { CoursePortfolioItem } from "./CoursePortfolioItem";
+
+import "swiper/css";
+import "swiper/css/pagination";
+import "./CourseProjectSwiper.css";
 
 export const projects = [
   {
-    avararka: avatarka,
-    title: "Anna Deriega - UX/UI design Protect card mobile animation",
+    avatarka: ava,
+    name: "Anna Deriega",
+    title: " - UX/UI design Protect card mobile animation",
     image: project1,
   },
   {
-    avararka: avatarka,
-    title: "Anna Deriega - UX/UI design Protect card mobile animation",
+    avatarka: ava,
+    name: "Anna Deriega",
+    title: " - UX/UI design Protect card mobile animation",
     image: project2,
   },
   {
-    avararka: avatarka,
-    title: "Anna Deriega - UX/UI design Protect card mobile animation",
+    avatarka: ava,
+    name: "Anna Deriega",
+    title: " - UX/UI design Protect card mobile animation",
     image: project3,
   },
   {
-    avararka: avatarka,
-    title: "Anna Deriega - UX/UI design Protect card mobile animation",
+    avatarka: ava,
+    name: "Anna Deriega",
+    title: " - UX/UI design Protect card mobile animation",
     image: project4,
   },
   {
-    avararka: avatarka,
-    title: "Anna Deriega - UX/UI design Protect card mobile animation",
+    avatarka: ava,
+    name: "Anna Deriega",
+    title: " - UX/UI design Protect card mobile animation",
     image: project5,
   },
   {
-    avararka: avatarka,
-    title: "Anna Deriega - UX/UI design Protect card mobile animation",
+    avatarka: ava,
+    name: "Anna Deriega",
+    title: " - UX/UI design Protect card mobile animation",
     image: project6,
   },
   {
-    avararka: avatarka,
-    title: "Anna Deriega - UX/UI design Protect card mobile animation",
+    avatarka: ava,
+    name: "Anna Deriega",
+    title: " - UX/UI design Protect card mobile animation",
     image: project7,
   },
   {
-    avararka: avatarka,
-    title: "Anna Deriega - UX/UI design Protect card mobile animation",
+    avatarka: ava,
+    name: "Anna Deriega",
+    title: " - UX/UI design Protect card mobile animation",
     image: project8,
   },
   {
-    avararka: avatarka,
-    title: "Anna Deriega - UX/UI design Protect card mobile animation",
+    avatarka: ava,
+    name: "Anna Deriega",
+    title: " - UX/UI design Protect card mobile animation",
     image: project9,
   },
   {
-    avararka: avatarka,
-    title: "Anna Deriega - UX/UI design Protect card mobile animation",
+    avatarka: ava,
+    name: "Anna Deriega",
+    title: " - UX/UI design Protect card mobile animation",
     image: project10,
   },
   {
-    avararka: avatarka,
-    title: "Anna Deriega - UX/UI design Protect card mobile animation",
+    avatarka: ava,
+    name: "Anna Deriega",
+    title: " - UX/UI design Protect card mobile animation",
     image: project11,
   },
   {
-    avararka: avatarka,
-    title: "Anna Deriega - UX/UI design Protect card mobile animation",
+    avatarka: ava,
+    name: "Anna Deriega",
+    title: " - UX/UI design Protect card mobile animation",
     image: project12,
   },
 ];
@@ -97,6 +116,28 @@ export const CoursePortfolio = () => {
             Hundreds of our students have started rewarding careers with great
             companies.
           </StyledFrameText>
+          {/* {width > 1023 && ( */}
+          <Swiper
+            slidesPerView={"auto"}
+            spaceBetween={24}
+            loop={true}
+            pagination={{ type: "fraction" }}
+            navigation={true}
+            modules={[Pagination, Navigation, A11y]}
+            className="reviewSwiper"
+          >
+            {projects.map((project, index) => (
+              <SwiperSlide key={index}>
+                <CoursePortfolioItem
+                  avatarka={project.avatarka}
+                  title={project.title}
+                  image={project.image}
+                  name={project.name}
+                ></CoursePortfolioItem>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+          {/* )} */}
         </StyledContainer>
       </StyledCoursePotfolio>
       {width > 1023 && (

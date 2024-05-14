@@ -7,6 +7,7 @@ export const StyledCourseWorks = styled.div`
   padding: 100px 0 0 0;
   border-radius: 0 0 80px 80px;
   background: ${colors.shades.violet6};
+  overflow: hidden;
 `;
 export const StyledCourseWorksContainer = styled.div`
   height: 670px;

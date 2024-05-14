@@ -13,6 +13,7 @@ import { CourseSelection } from "../components/Course/CourseSelection/CourseSele
 import { CourseWorks } from "../components/Course/CourseWorks/CourseWorks";
 import { Coursefaq } from "../components/Course/Coursefaq/Coursefaq";
 import { CoursePortfolio } from "../components/Course/CoursePortfolio/CoursePortfolio";
+import { FooterApart } from "../components/PageMentors/FooterApart/FooterApart";
 
 export const Course = () => {
   useEffect(() => {
@@ -35,6 +36,7 @@ export const Course = () => {
       <CourseWorks />
       <CoursePortfolio />
       <Coursefaq />
+      <FooterApart />
     </>
   );
 };

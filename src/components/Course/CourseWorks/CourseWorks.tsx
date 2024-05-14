@@ -1,4 +1,7 @@
-import { StyledContainer } from "../../../styledConstants";
+import {
+  StyledContainer,
+  StyledSectionSeparator,
+} from "../../../styledConstants";
 import {
   StyledCourseWorks,
   StyledCourseWorksContainer,
@@ -12,6 +15,8 @@ import {
 import image from "../../../assets/img/whiteStoneStatueOfThinkingZeus.png";
 import { useState } from "react";
 import { CourseWorksItem } from "./CourseWorksItem";
+import { useWindowSize } from "../../../hooks/useWindowSize";
+import { colors } from "../../../styledConstantsColors";
 
 const words = ["Group", "Self-paced", "Customize the course"];
 const worksList = [
@@ -79,45 +84,53 @@ const worksList = [
   ],
 ];
 export const CourseWorks = () => {
+  const { width = 0 } = useWindowSize();
   const [currentIndex, setCurrentIndex] = useState(0);
   const goToIndex = (index: number) => {
     setCurrentIndex(index);
   };
   return (
-    <StyledCourseWorks>
-      <StyledContainer>
-        <StyledCourseWorksContainer>
-          <StyledWorksTitle>
-            <h3>How it works?</h3>
-            <StyledHowWorks>
-              <StyledButtonContainer>
-                {words.map((word, index) => (
-                  <StyledButton
-                    key={index}
-                    onClick={() => goToIndex(index)}
-                    active={currentIndex === index}
-                  >
-                    {word}
-                  </StyledButton>
-                ))}
-              </StyledButtonContainer>
-              <StyledWorksListContainer>
-                {worksList[currentIndex].map((element, index) => (
-                  <CourseWorksItem
-                    key={index}
-                    title={element.title}
-                    text={element.text}
-                    item={index + 1}
-                  />
-                ))}
-              </StyledWorksListContainer>
-            </StyledHowWorks>
-          </StyledWorksTitle>
-          <StyledImgWrap>
-            <img src={image} alt="statue"></img>
-          </StyledImgWrap>
-        </StyledCourseWorksContainer>
-      </StyledContainer>
-    </StyledCourseWorks>
+    <>
+      <StyledCourseWorks>
+        <StyledContainer>
+          <StyledCourseWorksContainer>
+            <StyledWorksTitle>
+              <h3>How it works?</h3>
+              <StyledHowWorks>
+                <StyledButtonContainer>
+                  {words.map((word, index) => (
+                    <StyledButton
+                      key={index}
+                      onClick={() => goToIndex(index)}
+                      active={currentIndex === index}
+                    >
+                      {word}
+                    </StyledButton>
+                  ))}
+                </StyledButtonContainer>
+                <StyledWorksListContainer>
+                  {worksList[currentIndex].map((element, index) => (
+                    <CourseWorksItem
+                      key={index}
+                      title={element.title}
+                      text={element.text}
+                      item={index + 1}
+                    />
+                  ))}
+                </StyledWorksListContainer>
+              </StyledHowWorks>
+            </StyledWorksTitle>
+            <StyledImgWrap>
+              <img src={image} alt="statue"></img>
+            </StyledImgWrap>
+          </StyledCourseWorksContainer>
+        </StyledContainer>
+      </StyledCourseWorks>
+      {width > 1023 && (
+        <StyledSectionSeparator
+          $background={colors.neutral.darkBlack}
+        ></StyledSectionSeparator>
+      )}
+    </>
   );
 };
