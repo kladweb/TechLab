@@ -1,4 +1,10 @@
-import { StyledContainer, StyledFrameHeader } from "../../../styledConstants";
+import { useWindowSize } from "../../../hooks/useWindowSize";
+import {
+  StyledContainer,
+  StyledFrameHeader,
+  StyledSectionSeparator,
+} from "../../../styledConstants";
+import { colors } from "../../../styledConstantsColors";
 import Accordeon from "../../Accordeon/Accordeon";
 import { StyledCoursefaq } from "./StyledCoursefaq";
 
@@ -27,12 +33,22 @@ const ourAccordeonDataFaq = [
 ];
 
 export const Coursefaq = () => {
+  const { width = 0 } = useWindowSize();
   return (
-    <StyledCoursefaq>
-      <StyledContainer>
-        <StyledFrameHeader></StyledFrameHeader>
-        <Accordeon accordeonData={ourAccordeonDataFaq} isBlack={true} />
-      </StyledContainer>
-    </StyledCoursefaq>
+    <>
+      <StyledCoursefaq>
+        <StyledContainer>
+          <StyledFrameHeader>
+            Do you have any <span>questions? </span>
+          </StyledFrameHeader>
+          <Accordeon accordeonData={ourAccordeonDataFaq} isBlack={true} />
+        </StyledContainer>
+      </StyledCoursefaq>
+      {width > 1023 && (
+        <StyledSectionSeparator
+          $background={colors.neutral.white}
+        ></StyledSectionSeparator>
+      )}
+    </>
   );
 };
