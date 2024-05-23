@@ -6,6 +6,7 @@ import type { IdataUnit } from "../../../data/dataUnits";
 import { CourseCard } from "../CourseCard/CourseCard";
 import { StyledCourseHead, StyledCoursesContainer } from "./styledCourseCards";
 import { UnitCard } from "../CourseCard/UnitCard";
+import { filterCourseLevel } from '../FiltersItems/filtersCourses'
 
 interface ResultCardsProps {
   nameGroup: string,
@@ -18,38 +19,17 @@ export const ResultCards: React.FC<ResultCardsProps> = ({nameGroup, checkedItems
 
   useEffect(() => {
     if (checkedItems.includes('Course') && (checkedItems.includes('Self-paced') || checkedItems.includes('In group'))) {
-      setCoursesResult(filterCourseLevel(dataCourses));
+      setCoursesResult(filterCourseLevel(dataCourses, checkedItems));
     } else {
       setCoursesResult([]);
     }
     if (checkedItems.includes('Lesson') && checkedItems.includes('Self-paced')) {
-      setUnitsResult(filterCourseLevel(dataUnits));
+      setUnitsResult(filterCourseLevel(dataUnits, checkedItems));
     } else {
       setUnitsResult([]);
     }
   }, [checkedItems]);
 
-  const filterCourseLevel = (dataArr: any) => {
-    let newDataCourses: any[] = [];
-    if (checkedItems.includes('Data science')) {
-      newDataCourses = newDataCourses.concat(dataArr.filter((course: IdataCourse | IdataUnit) =>
-        (course.course === 'Data science')));
-    }
-    if (checkedItems.includes('Design')) {
-      newDataCourses = newDataCourses.concat(dataArr.filter((course: IdataCourse | IdataUnit) => (course.course === 'Design')));
-    }
-    if (checkedItems.includes('Programming')) {
-      newDataCourses = newDataCourses.concat(dataArr.filter((course: IdataCourse | IdataUnit) => (course.course === 'Programming')));
-    }
-    let newDataCourses2: any[] = [];
-    if (checkedItems.includes('Beginner')) {
-      newDataCourses2 = newDataCourses2.concat(newDataCourses.filter((course) => (course.level.includes('Beginner'))));
-    }
-    if (checkedItems.includes('Intermediate')) {
-      newDataCourses2 = newDataCourses2.concat(newDataCourses.filter((course) => (course.level.includes('Intermediate'))));
-    }
-    return newDataCourses2;
-  }
 
   return (
     <>

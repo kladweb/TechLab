@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import {
   StyledFilterCategoryName, StyledFiltersBlock, StyledFiltersCategory,
   StyledFiltersHead, StyledFiltersHeadBlock, StyledFiltersList, StyledFiltersMenu,
-} from "./styledFiltersCards";
+} from "./styledFiltersItems";
 import { ListItem } from "./ListItem";
 import { filters } from "../../../data/filters";
 import type { Ifilter } from "../../../data/filters";
@@ -17,7 +17,7 @@ interface FiltersCardsProps {
   handlerToggleChecked: any
 }
 
-export const FiltersCards: React.FC<FiltersCardsProps> = (
+export const FiltersItems: React.FC<FiltersCardsProps> = (
   {
     toggleFilterMenu,
     isFiltersOpen,

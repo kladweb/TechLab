@@ -1,30 +1,37 @@
-import React, { useState } from "react";
-import { useAppSelector } from "../../../store/store";
+import React, { useEffect, useLayoutEffect, useState } from "react";
+import { Params, useParams } from "react-router-dom";
+import { useAppDispatch, useAppSelector } from "../../../store/store";
 import { StyledCatalogue } from "./styledCatalogueContent";
 import { StyledContainer, StyledFrameHeader } from "../../../styledConstants";
 import { CourseCards } from "../CourseCards/CourseCards";
 import { UnitCards } from "../CourseCards/UnitCards";
-import { FiltersCards } from "../FiltersCards/FiltersCards";
+import { FiltersItems } from "../FiltersItems/FiltersItems";
 import { ResultCards } from "../CourseCards/ResultCards";
-import { filters } from "../../../data/filters";
-import type { Ifilter } from "../../../data/filters";
-
-export interface IitemsFilter {
-  item: string,
-  checked: boolean
-}
+import { dataCourses } from "../../../data/dataCourses";
+import type { IdataCourse } from "../../../data/dataCourses";
+import { dataUnits } from "../../../data/dataUnits";
+import type { IdataUnit } from "../../../data/dataUnits";
+import { getTypeCourses } from "../FiltersItems/filtersCourses";
+import { setDataCourses } from "../../../store/courses";
 
 export const CatalogueContent = () => {
+  const dispatch = useAppDispatch();
+  const params: Readonly<Params> = useParams();
+  const param: string = params.catalogue as string;
+  const typeLearning: string = (param === 'all') ? param : param.split(' ').reverse()[0];
+  const name: string = (param === 'all') ? param : param.split(typeLearning)[0].trim();
   const isRunlineClosed = useAppSelector((state) => state.runline.isClosed);
   const [isFiltersOpen, setIsFiltersOpen] = useState<boolean>(false);
-  const [checkedItems, setCheckedItems] = useState<string[]>([]);
+  const [filterItems, setFilterItems] = useState<string[]>([]);
+  // const [cardsCourse, setCardsCourse] = useState<IdataCourse[]>(dataCourses);
+  const [cardsUnit, setCardsUnit] = useState<IdataUnit[]>(dataUnits);
 
   const handlerToggleChecked = (item: string) => {
-    if (checkedItems.includes(item)) {
-      const newCheckedItems: string[] = [...checkedItems];
-      setCheckedItems(newCheckedItems.filter(elem => elem !== item));
+    if (filterItems.includes(item)) {
+      const newCheckedItems: string[] = [...filterItems];
+      setFilterItems(newCheckedItems.filter(elem => elem !== item));
     } else {
-      setCheckedItems([...checkedItems, item]);
+      setFilterItems([...filterItems, item]);
     }
   }
 
@@ -32,23 +39,48 @@ export const CatalogueContent = () => {
     setIsFiltersOpen(prevState => !prevState);
   }
 
+  useEffect(() => {
+    if (typeLearning === 'courses') {
+      if (name !== 'All') {
+        dispatch(setDataCourses(getTypeCourses(dataCourses, name)));
+        // setCardsCourse(() => getTypeCourses(dataCourses, name));
+      } else {
+        // setCardsCourse(() => dataCourses);
+        dispatch(setDataCourses(dataCourses));
+      }
+    }
+    if (typeLearning === 'lessons') {
+      if (name !== 'All') {
+        setCardsUnit(getTypeCourses(dataUnits, name));
+      } else {
+        setCardsUnit(dataUnits);
+      }
+    }
+  }, [param]);
+
   return (
     <StyledCatalogue $isRunlineClosed={isRunlineClosed}>
       <StyledContainer>
         <StyledFrameHeader><span>Catalogue</span></StyledFrameHeader>
-        <FiltersCards
+        <FiltersItems
           toggleFilterMenu={toggleFilterMenu}
           isFiltersOpen={isFiltersOpen}
-          checkedItems={checkedItems}
+          checkedItems={filterItems}
           handlerToggleChecked={handlerToggleChecked}
         />
         {
           isFiltersOpen ?
-            <ResultCards nameGroup={'Results'} checkedItems={checkedItems} />
+            <ResultCards nameGroup={'Results'} checkedItems={filterItems} />
             :
             <>
-              <CourseCards nameGroup={'All Courses'} />
-              <UnitCards nameGroup={'All Units'} />
+              {
+                (typeLearning === 'all' || typeLearning === 'courses') &&
+                <CourseCards nameGroup={(param === 'all' ? 'All Courses' : param)} />
+              }
+              {
+                (typeLearning === 'all' || typeLearning === 'lessons') &&
+                <UnitCards cardsUnit={cardsUnit} nameGroup={(param === 'all' ? 'All Lessons' : param)} />
+              }
             </>
         }
       </StyledContainer>

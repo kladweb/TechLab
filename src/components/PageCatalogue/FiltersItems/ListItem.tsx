@@ -1,5 +1,5 @@
 import React from "react";
-import { StyledFilterCheckbox, StyledFilterLabel, StyledListItem } from "./styledFiltersCards";
+import { StyledFilterCheckbox, StyledFilterLabel, StyledListItem } from "./styledFiltersItems";
 
 interface ListItemProps {
   item: string,

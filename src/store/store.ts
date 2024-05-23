@@ -4,15 +4,17 @@ import { navReducer } from './navigation'
 import { searchReducer } from './search'
 import { runlineReducer } from './runline'
 import { feedbackReducer } from './feedbackform'
+import { dataCourseReducer } from "./courses";
 
 
 export const store = configureStore({
-    reducer: {
-        nav: navReducer,
-        search: searchReducer,
-        runline: runlineReducer,
-        feedback: feedbackReducer
-    },
+  reducer: {
+    nav: navReducer,
+    search: searchReducer,
+    runline: runlineReducer,
+    feedback: feedbackReducer,
+    dataCourses: dataCourseReducer
+  },
 })
 
 export type RootState = ReturnType<typeof store.getState>

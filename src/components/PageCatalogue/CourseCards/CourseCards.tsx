@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useWindowSize } from "../../../hooks/useWindowSize";
-import { dataCourses } from "../../../data/dataCourses";
 import type { IdataCourse } from "../../../data/dataCourses";
 import { CourseCard } from "../CourseCard/CourseCard";
 import {
@@ -8,15 +7,21 @@ import {
 } from "../../PageAboutSchool/AboutSchoolOurExperts/styledAboutSchoolOurExperts";
 import { StyledCourseHead, StyledCoursesContainer } from "./styledCourseCards";
 import { DownArrow, UpArrow } from "../../../assets/icons/Arrows";
+import { Params, useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { useAppSelector } from "../../../store/store";
 
 interface CourseCardsProps {
+  // cardsCourse: IdataCourse[],
   nameGroup: string
 }
 
 export const CourseCards: React.FC<CourseCardsProps> = ({nameGroup}) => {
-  const cards = dataCourses;
+  const params: Readonly<Params> = useParams();
+  // const cards: IdataCourse[] = [...cardsCourse]
+  const cards: IdataCourse[] = useAppSelector(state => state.dataCourses.courses);
   const {width = 0} = useWindowSize();
-  const [nCardsAdd, setNCardsAdd] = useState<number>(1);
+  const [nCardsAdd, setNCardsAdd] = useState<number>(3);
   const [dataCardsView, setCardsView] = useState<IdataCourse[]>(cards.slice(0, nCardsAdd));
   const [isAllCards, setIsAllCards] = useState<boolean>(false);
 
@@ -25,26 +30,33 @@ export const CourseCards: React.FC<CourseCardsProps> = ({nameGroup}) => {
   }, [width]);
 
   useEffect(() => {
-    setCardsView(dataCourses.slice(0, nCardsAdd));
+    setCardsView(cards.slice(0, nCardsAdd));
   }, [nCardsAdd]);
 
   useEffect(() => {
-    if (dataCourses.length <= dataCardsView.length) {
+    if (cards.length <= dataCardsView.length) {
       setIsAllCards(true);
     }
   }, [dataCardsView]);
 
+  useEffect(() => {
+    setCardsView(cards.slice(0, nCardsAdd));
+  }, [params]);
+
   const handlerAll = () => {
-    setCardsView(dataCourses);
+    setCardsView(cards);
   }
 
   const handlerLess = () => {
-    setCardsView(dataCourses.slice(0, nCardsAdd));
+    setCardsView(cards.slice(0, nCardsAdd));
     setIsAllCards(false);
     setTimeout(() => {
       window.scrollTo(0, 0);
     }, 0);
   }
+
+  console.log(cards);
+  console.log(dataCardsView);
 
   return (
     <>
@@ -60,7 +72,7 @@ export const CourseCards: React.FC<CourseCardsProps> = ({nameGroup}) => {
         }
       </StyledCoursesContainer>
       {
-        (nameGroup === 'All Courses') &&
+        (cards.length > nCardsAdd) &&
         <>
           {
             (!isAllCards) ?
