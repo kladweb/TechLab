@@ -124,7 +124,7 @@ export const CoursePortfolio = () => {
             pagination={{ type: "fraction" }}
             navigation={true}
             modules={[Pagination, Navigation, A11y]}
-            className="reviewSwiper"
+            className="portfolioSwiper"
           >
             {projects.map((project, index) => (
               <SwiperSlide key={index}>
@@ -137,7 +137,6 @@ export const CoursePortfolio = () => {
               </SwiperSlide>
             ))}
           </Swiper>
-          {/* )} */}
         </StyledContainer>
       </StyledCoursePotfolio>
       {width > 1023 && (
