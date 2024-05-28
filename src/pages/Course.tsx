@@ -13,8 +13,8 @@ import { CourseSelection } from "../components/Course/CourseSelection/CourseSele
 import { CourseWorks } from "../components/Course/CourseWorks/CourseWorks";
 import { Coursefaq } from "../components/Course/Coursefaq/Coursefaq";
 import { CoursePortfolio } from "../components/Course/CoursePortfolio/CoursePortfolio";
-import { FooterApart } from "../components/PageMentors/FooterApart/FooterApart";
 import { CourseFeedback } from "../components/Course/CourseFeedback/CourseFeedback";
+import { FeedbackCourse } from "../components/Course/FeedbackCourse/FeedbackCourse";
 
 export const Course = () => {
   useEffect(() => {
@@ -38,7 +38,7 @@ export const Course = () => {
       <CoursePortfolio />
       <Coursefaq />
       <CourseFeedback />
-      <FooterApart />
+      <FeedbackCourse />
     </>
   );
 };

@@ -82,3 +82,6 @@ export const StyledPortfolioItemTitle = styled.div`
     font-weight: 700;
   }
 `;
+export const StyledPortfolioSwiper = styled.div`
+  width: 100%;
+`;

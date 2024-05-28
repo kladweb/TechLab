@@ -4,7 +4,10 @@ import {
   StyledFrameText,
   StyledSectionSeparator,
 } from "../../../styledConstants";
-import { StyledCoursePotfolio } from "./StyledCoursePortfolio";
+import {
+  StyledCoursePotfolio,
+  StyledPortfolioSwiper,
+} from "./StyledCoursePortfolio";
 import ava from "../../../assets/img/avatarkaWomanCoursePage.png";
 import project1 from "../../../assets/img/projects1.png";
 import project2 from "../../../assets/img/projects2.png";
@@ -117,6 +120,8 @@ export const CoursePortfolio = () => {
             companies.
           </StyledFrameText>
           {/* {width > 1023 && ( */}
+        </StyledContainer>
+        <StyledPortfolioSwiper>
           <Swiper
             slidesPerView={"auto"}
             spaceBetween={24}
@@ -137,7 +142,7 @@ export const CoursePortfolio = () => {
               </SwiperSlide>
             ))}
           </Swiper>
-        </StyledContainer>
+        </StyledPortfolioSwiper>
       </StyledCoursePotfolio>
       {width > 1023 && (
         <StyledSectionSeparator
