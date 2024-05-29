@@ -3,8 +3,20 @@ import {
   StyledFrameHeader,
   StyledFrameText,
 } from "../../../styledConstants";
-import { StyledCourseSelectionContainer } from "./StyledCourseSelection";
+import { useState } from "react";
+import { SelectGroup } from "../CourseWorks/SelectGroup";
+import {
+  StyledCourseSelectionContainer,
+  StyledCourseSelectionArea,
+} from "./StyledCourseSelection";
+
+const CourseSelect = ["Group", "Self-paced", "Customize the course"];
+
 export const CourseSelection = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const goToIndex = (index: number) => {
+    setCurrentIndex(index);
+  };
   return (
     <StyledCourseSelectionContainer>
       <StyledContainer>
@@ -17,6 +29,13 @@ export const CourseSelection = () => {
           Also to see if online learning works for you, try out our free
           lessons.
         </StyledFrameText>
+        <StyledCourseSelectionArea>
+          <SelectGroup
+            words={CourseSelect}
+            goToIndex={goToIndex}
+            activeIndex={currentIndex}
+          />
+        </StyledCourseSelectionArea>
       </StyledContainer>
     </StyledCourseSelectionContainer>
   );

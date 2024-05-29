@@ -17,6 +17,7 @@ import { useState } from "react";
 import { CourseWorksItem } from "./CourseWorksItem";
 import { useWindowSize } from "../../../hooks/useWindowSize";
 import { colors } from "../../../styledConstantsColors";
+import { SelectGroup } from "./SelectGroup";
 
 const words = ["Group", "Self-paced", "Customize the course"];
 const worksList = [
@@ -97,7 +98,12 @@ export const CourseWorks = () => {
             <StyledWorksTitle>
               <h3>How it works?</h3>
               <StyledHowWorks>
-                <StyledButtonContainer>
+                <SelectGroup
+                  words={words}
+                  goToIndex={goToIndex}
+                  activeIndex={currentIndex}
+                />
+                {/* <StyledButtonContainer>
                   {words.map((word, index) => (
                     <StyledButton
                       key={index}
@@ -107,7 +113,7 @@ export const CourseWorks = () => {
                       {word}
                     </StyledButton>
                   ))}
-                </StyledButtonContainer>
+                </StyledButtonContainer> */}
                 <StyledWorksListContainer>
                   {worksList[currentIndex].map((element, index) => (
                     <CourseWorksItem

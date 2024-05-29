@@ -64,6 +64,8 @@ export const StyledWorksListContainer = styled.div`
   height: 332px;
   display: flex;
   flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
 `;
 export const StyledButton = styled.div<{ active: boolean }>`
   border-radius: 40px;
@@ -78,6 +80,12 @@ export const StyledButton = styled.div<{ active: boolean }>`
   font-weight: 500;
   line-height: 26px; /* 144.444% */
   letter-spacing: 0.54px;
+  transition: transform 0.3s ease; /* Smooth transition for transform property */
+
+  &:hover {
+    transform: scale(1.01); /* Scale the button slightly on hover */
+    cursor: pointer;
+  }
 `;
 export const StyledWorksItemContainer = styled.div`
   display: flex;
