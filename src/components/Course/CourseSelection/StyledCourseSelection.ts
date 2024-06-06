@@ -7,3 +7,8 @@ export const StyledCourseSelectionArea = styled.div`
   width: 100%;
   padding: 50px;
 `;
+export const StyledSelectionItemContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+`;
