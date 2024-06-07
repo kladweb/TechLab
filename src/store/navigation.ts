@@ -1,48 +1,68 @@
-import { PayloadAction, createSlice } from '@reduxjs/toolkit'
+import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
 export type Tab = {
-    title: string,
-    linkSections?: Tab[],
-    path?: string
-}
+  title: string;
+  linkSections?: Tab[];
+  path?: string;
+};
 
 type NavState = {
-    clickedTab: string,
-    tabs: Tab[]
-}
+  clickedTab: string;
+  tabs: Tab[];
+};
 
 const initialState: NavState = {
-    clickedTab: '',
-    tabs: [{
-        title: 'Catalogue', linkSections: [{
-            title: 'All courses', path: '/',
-            linkSections: [{
-                title: 'Design', path: '/', linkSections: [{ title: 'Web Design', path: '/' },
-                { title: 'User Interface Design', path: '/' },
-                { title: 'Mobile App Design', path: '/' },
-                { title: 'Graphic Design', path: '/' },
-                { title: 'UX/UI Design', path: '/' }]
-            }, { title: 'Programming', path: '/' }, { title: 'Data Science', path: '/' }]
+  clickedTab: "",
+  tabs: [
+    {
+      title: "Catalogue",
+      linkSections: [
+        {
+          title: "All courses",
+          path: "/",
+          linkSections: [
+            {
+              title: "Design",
+              path: "/course",
+              linkSections: [
+                { title: "Web Design", path: "/" },
+                { title: "User Interface Design", path: "/" },
+                { title: "Mobile App Design", path: "/" },
+                { title: "Graphic Design", path: "/" },
+                { title: "UX/UI Design", path: "/course" },
+              ],
+            },
+            { title: "Programming", path: "/" },
+            { title: "Data Science", path: "/" },
+          ],
         },
         {
-            title: 'All lessons', path: '/',
-            linkSections: [{ title: 'Design', path: '/' }, { title: 'Programming', path: '/' }, { title: 'Data Science', path: '/' }]
+          title: "All lessons",
+          path: "/",
+          linkSections: [
+            { title: "Design", path: "/" },
+            { title: "Programming", path: "/" },
+            { title: "Data Science", path: "/" },
+          ],
         },
-        { title: 'All mentors', path: '/aboutschool#ourexperts' }]
+        { title: "All mentors", path: "/aboutschool#ourexperts" },
+      ],
     },
-    { title: 'Free Courses', path: '/' },
-    { title: 'About school', path: '/aboutschool' }]
-}
+    { title: "Free Courses", path: "/" },
+    { title: "About school", path: "/aboutschool" },
+    { title: "Course", path: "/course" },
+  ],
+};
 
 export const navSlice = createSlice({
-    name: 'navigation',
-    initialState,
-    reducers: {
-        setClickedTab: (state, action: PayloadAction<string>) => {
-            state.clickedTab = action.payload
-        },
-    }
-})
+  name: "navigation",
+  initialState,
+  reducers: {
+    setClickedTab: (state, action: PayloadAction<string>) => {
+      state.clickedTab = action.payload;
+    },
+  },
+});
 
-export const { setClickedTab } = navSlice.actions
-export const navReducer = navSlice.reducer
+export const { setClickedTab } = navSlice.actions;
+export const navReducer = navSlice.reducer;
