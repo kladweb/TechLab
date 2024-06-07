@@ -15,29 +15,32 @@ const initialState: NavState = {
   clickedTab: '',
   tabs: [{
     title: 'Catalogue', path: '/catalogue/all', linkSections: [{
-      title: 'All courses', path: '/catalogue/All courses',
+      title: 'All courses', path: '/catalogue/Courses',
       linkSections: [
         {
-          title: 'Design', path: '/catalogue/Design courses', linkSections: [{title: 'Web Design', path: '/'},
-            {title: 'User Interface Design', path: '/'},
-            {title: 'Mobile App Design', path: '/'},
-            {title: 'Graphic Design', path: '/'},
-            {title: 'UX/UI Design', path: '/'}]
+          title: 'Design', path: '/catalogue/Courses,Design',
+          // linkSections: [
+          //   {title: 'Web Design', path: '/'},
+          //   {title: 'User Interface Design', path: '/'},
+          //   {title: 'Mobile App Design', path: '/'},
+          //   {title: 'Graphic Design', path: '/'},
+          //   {title: 'UX/UI Design', path: '/'}
+          // ]
         },
-        {title: 'Programming', path: '/catalogue/Programming courses'},
-        {title: 'Data Science', path: '/catalogue/Data science courses'}]
+        {title: 'Programming', path: '/catalogue/Courses,Programming'},
+        {title: 'Data Science', path: '/catalogue/Courses,Data science'}]
     },
       {
-        title: 'All lessons', path: '/catalogue/All lessons',
+        title: 'All units', path: '/catalogue/Units',
         linkSections: [
-          {title: 'Design', path: '/catalogue/Design lessons'},
-          {title: 'Programming', path: '/catalogue/Programming lessons'},
-          {title: 'Data Science', path: '/catalogue/Data science lessons'}
+          {title: 'Design', path: '/catalogue/Units,Design'},
+          {title: 'Programming', path: '/catalogue/Units,Programming'},
+          {title: 'Data Science', path: '/catalogue/Units,Data science'}
         ]
       },
       {title: 'All mentors', path: '/aboutschool#ourexperts'}]
   },
-    {title: 'Free Courses', path: '/catalogue/All lessons'},
+    {title: 'Free Courses', path: '/catalogue/All units'},
     {title: 'About school', path: '/aboutschool'}]
 }
 

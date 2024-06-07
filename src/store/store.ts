@@ -4,7 +4,8 @@ import { navReducer } from './navigation'
 import { searchReducer } from './search'
 import { runlineReducer } from './runline'
 import { feedbackReducer } from './feedbackform'
-import { dataCourseReducer } from "./courses";
+import { dataCourseReducer } from "./listCourses";
+import { dataUnitsReducer } from "./listUnits";
 
 
 export const store = configureStore({
@@ -13,7 +14,8 @@ export const store = configureStore({
     search: searchReducer,
     runline: runlineReducer,
     feedback: feedbackReducer,
-    dataCourses: dataCourseReducer
+    dataCourses: dataCourseReducer,
+    dataUnits: dataUnitsReducer
   },
 })
 

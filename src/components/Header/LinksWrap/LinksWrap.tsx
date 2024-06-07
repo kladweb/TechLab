@@ -39,7 +39,7 @@ export const LinksWrap = ({isClicked}: LinksWrapType) => {
               <StyledDirWrapper key={'section' + i}>
                 <StyledLink to={link.path} onClick={closeLinksWrap}>
                   <StyledSectionTitle>{link.title}</StyledSectionTitle>
-                  <Arrow />
+                  {/*<Arrow />*/}
                 </StyledLink>
                 <StyledDirLinksWrap id="linkWrap">
                   {link.linkSections && link.linkSections.map((secLink, j) => secLink.path &&

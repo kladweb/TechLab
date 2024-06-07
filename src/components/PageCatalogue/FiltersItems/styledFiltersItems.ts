@@ -40,7 +40,6 @@ export const StyledFiltersHeadBlock = styled.div<{ $isFiltersOpen: boolean }>`
   &:hover path {
     stroke: ${typographyColor.lightBG.violet};
   }
-
 `
 
 export const StyledIconFilters = styled.object`

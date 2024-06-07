@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { backgroundColor, typographyColor } from "../../../styledConstantsColors";
+import { backgroundColor } from "../../../styledConstantsColors";
 
 export const StyledCatalogue = styled.div<{ $isRunlineClosed: boolean }>`
   margin-top: ${props => props.$isRunlineClosed ? '82px' : '132px'};

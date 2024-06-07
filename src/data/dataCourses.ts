@@ -1,5 +1,5 @@
 import { colors } from "../styledConstantsColors";
-import { Iexpert } from "../components/OurExperts/experts";
+import { shuffle } from "./dataActions";
 
 export interface IdataCourse {
   id: string,
@@ -125,22 +125,4 @@ const dataCoursesOrder: IdataCourse[] = [
   },
 ]
 
-const shuffle = (array: IdataCourse[]): IdataCourse[] => {
-  let m: number = array.length, t, i;
-
-  // Пока есть элементы для перемешивания
-  while (m) {
-
-    // Взять оставшийся элемент
-    i = Math.floor(Math.random() * m--);
-
-    // И поменять его местами с текущим элементом
-    t = array[m];
-    array[m] = array[i];
-    array[i] = t;
-  }
-
-  return array;
-}
-
-export const dataCourses: IdataCourse[] = shuffle(dataCoursesOrder);
+export const dataCourses: IdataCourse[] = shuffle(dataCoursesOrder) as IdataCourse[];

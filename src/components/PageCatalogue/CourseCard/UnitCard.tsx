@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   StyledButtonBuyCourse, StyledCourse, StyledCourseHeadContainer, StyledDuration,
-  StyledIconHeart, StyledLevel, StyledNew, StyledPriceButtonContainer,
+  StyledLevel, StyledNew, StyledPriceButtonContainer,
   StyledPriceContainer, StyledPriceInfo, StyledTagsContainer, StyledUnitCard, StyledUnitHeadName
 } from "./styledCourseCard";
 import {
@@ -9,19 +9,24 @@ import {
 } from "../../PageAboutSchool/AboutSchoolOurExperts/MentorCard/styledMentorCard";
 import type { IdataUnit } from "../../../data/dataUnits";
 import ArrowRight from "../../../assets/icons/ArrowRight";
-import iconHeart from "../../../assets/icons/HeartIcon.svg";
+import { ReactComponent as IconHeart } from "../../../assets/icons/HeartIcon.svg";
 
 export const UnitCard: React.FC<IdataUnit> = (unit) => {
+  const [isFavorite, setIsFavorite] = useState<boolean>(false);
 
   const handlerCourseCard = (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault();
   }
 
+  const toggleFavorite = () => {
+    setIsFavorite(prevState => !prevState);
+  }
+
   return (
     <StyledUnitCard to={`/`} $cardColor={unit.color} onClick={handlerCourseCard}>
-      <StyledCourseHeadContainer>
+      <StyledCourseHeadContainer $isFavorite={isFavorite}>
         <StyledUnitHeadName $cardColor={unit.color}>{unit.name}</StyledUnitHeadName>
-        <StyledIconHeart src={iconHeart} alt='Heart icon' />
+        <IconHeart onClick={toggleFavorite} />
       </StyledCourseHeadContainer>
       <StyledTagsContainer>
         <StyledCourse $cardColor={unit.color}>{unit.course}</StyledCourse>

@@ -27,31 +27,37 @@ export const StyledLinkWrap = styled.li`
   cursor: pointer;
   padding: 28px 22px 28px 0px;
 
-  &:hover a {
+  & a:hover {
     color: ${hoverBtnColor.green};
     transition: all 0.5s;
   }
 
-  &:hover svg {
-    fill: ${hoverBtnColor.green};
-    transition: all 0.5s;
-  }
+  // &:hover svg {
+    //   fill: ${hoverBtnColor.green};
+  //   transition: all 0.5s;
+  // }
 
-  &:hover div {
-    color: ${hoverBtnColor.green};
-    transition: all 0.5s;
-  }
+  // &:hover div {
+    //   color: ${hoverBtnColor.green};
+  //   transition: all 0.5s;
+  // }
 `
 
 export const StyledSvgWrap = styled.div<{ $isClicked?: boolean }>`
   transform: ${props => props.$isClicked ? 'rotate(180deg)' : 'rotate(0deg)'};
   width: 24px;
   height: 24px;
+  transition: transform 0.3s ease-in-out;
 
   & svg {
     width: 100%;
     height: 100%;
     fill: ${props => props.$isClicked ? activeBtnColor.green : colors.neutral.white}
+  }
+
+  & svg:hover {
+    fill: ${hoverBtnColor.green};
+    transition: all 0.5s;
   }
 
   @media (max-width: 1439.5px) {
@@ -60,12 +66,25 @@ export const StyledSvgWrap = styled.div<{ $isClicked?: boolean }>`
   }
 `
 
-export const StyledLinkContainer = styled(Link)<{ $clickedTab: string, $title: string }>`
+export const StyledLinkContainer = styled.div<{ $clickedTab: string, $title: string }>`
   font-size: 18px;
   font-weight: 500;
   line-height: 26px;
   letter-spacing: 0.54px;
   color: ${props => props.$clickedTab === props.$title ? activeBtnColor.green : defaultBtnColor.white};
+  @media (max-width: 1439.5px) {
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.28px;
+  }
+`
+
+export const StyledHeadLinks = styled(Link)`
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 26px;
+  letter-spacing: 0.54px;
+  color: ${defaultBtnColor.white};
   @media (max-width: 1439.5px) {
     font-size: 14px;
     line-height: 20px;

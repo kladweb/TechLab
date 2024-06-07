@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import {
   StyledFilterCategoryName, StyledFiltersBlock, StyledFiltersCategory,
   StyledFiltersHead, StyledFiltersHeadBlock, StyledFiltersList, StyledFiltersMenu,
 } from "./styledFiltersItems";
 import { ListItem } from "./ListItem";
-import { filters } from "../../../data/filters";
-import type { Ifilter } from "../../../data/filters";
+import { dataActions } from "../../../data/dataActions";
+import type { Ifilter } from "../../../data/dataActions";
 import { ReactComponent as FiltersIcon } from "../../../assets/icons/filtersIcon.svg";
 
 type toggleFunction = () => void;
@@ -35,7 +35,7 @@ export const FiltersItems: React.FC<FiltersCardsProps> = (
         isFiltersOpen &&
         <StyledFiltersMenu>
           {
-            filters.map((filter: Ifilter, index: number) =>
+            dataActions.map((filter: Ifilter, index: number) =>
               <StyledFiltersCategory key={index}>
                 <StyledFilterCategoryName>{filter.name}</StyledFilterCategoryName>
                 <StyledFiltersList>

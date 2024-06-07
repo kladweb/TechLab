@@ -1,4 +1,5 @@
 import { colors } from "../styledConstantsColors";
+import { shuffle } from "./dataActions";
 
 export interface IdataUnit {
   id: string,
@@ -11,7 +12,7 @@ export interface IdataUnit {
   lessons: number
 }
 
-export const dataUnits: IdataUnit[] = [
+const dataUnitsOrder: IdataUnit[] = [
   {
     id: 'unitjava001',
     name: 'Introduction to Java',
@@ -103,3 +104,5 @@ export const dataUnits: IdataUnit[] = [
     lessons: 10
   },
 ]
+
+export const dataUnits: IdataUnit[] = shuffle([...dataUnitsOrder]) as IdataUnit[];

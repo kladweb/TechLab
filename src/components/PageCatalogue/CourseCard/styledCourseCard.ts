@@ -39,13 +39,23 @@ export const StyledUnitCard = styled(StyledCourseCard)`
   height: 370px;
 `
 
-export const StyledCourseHeadContainer = styled.div`
+export const StyledCourseHeadContainer = styled.div<{ $isFavorite: boolean }>`
   display: flex;
   min-height: 100px;
   align-items: flex-start;
   justify-content: space-between;
   gap: 24px;
   align-self: stretch;
+
+  & svg {
+    min-width: 40px;
+  }
+
+  & svg path {
+    fill: ${props => props.$isFavorite ? '#111111' : '#FFF'};
+    transition: fill 0.3s ease-out;
+  }
+
 `
 
 export const StyledCourseHeadName = styled.div<{ $cardColor: string }>`
